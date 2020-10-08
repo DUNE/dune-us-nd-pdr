@@ -1,0 +1,76 @@
+#+title: dune-us-nd-pdr utility area
+
+* What is here
+
+Scripts, models and templates used for generating latex and other
+artifacts from "requirement" aka "specification" data.  Data files are
+generally available in [[file:../data/][../data/]].
+
+* Data format
+
+Specification data files follow a simple subset of JSON/Jsonnet
+syntax.  A file provides an array of objects.  This outer format looks
+like:
+
+#+begin_src jsonnet
+[ {...}, {...}, ... ]
+#+end_src
+
+Each object is held in braces and consists of a key/value list of
+attributes separated by commas like this example.  Attributes from a
+specific set are considered as illustrated:
+
+#+begin_src jsonnet
+{
+    gid: "ND-CAP-02",
+    label: "nd-lar-nue-identification",
+    name: "ND-LAr nue identification",
+    description: "ND-LAr must identify and reconstruct nue events as well as FD",
+    specification: ">90% efficiency, background< 3%, Enu resolution <10-15%",
+    goal: "",
+    rationale: "ND-LAr nue identification and reconstruction is needed to verify the modelling of the nue flux and cross section, as well as the respone of the FD",
+    validation: "Simulation",
+}
+#+end_src
+
+These attributes are defined as:
+
+- gid :: a globally-unique, permanent identifier for the rest of the spec content.  It identifies the general intent and not any specific version of the spec.  A gid may be retired.
+
+- label :: a globally unique identifier suitable for a LaTeX ~\label{}~ marker
+
+- name :: an *exceedingly* brief human-oriented identifier clause, suitable for use in, /eg/ a summary table
+
+- description :: longer text describing what this spec means.  It need not state the specified constraint.
+
+- specification :: the constraint that this specification asserts.  This should be quantitative if possible.  
+
+- goal :: a more ambitious specification that potentially may be met.  Optional.
+
+- rationale :: why this specification is given
+
+- validation :: methods by which the one may demonstrate the specification is met.
+
+All attribute values except for *label* must be *valid LaTeX* content text
+and may be expected to appear in official documents.
+
+
+* Data import
+
+Some amount of support for *one time* importing of data from other
+formats is possible.  For example, if spreadsheets exist with the
+required information, or close to that, they can likely be converted
+without the need to manually edit. 
+
+An importer requires a mapping, eg, from spreadsheet columns to
+attribute key names.  If the imported data does not fully match the
+expectation, some manual editing of the imported Jsonnet file can be
+done.  Re-importing will not preserve that editing.
+
+
+* Data export
+
+The main target for this system is producing LaTeX tables.  However,
+the information can also be exported to formats such as spreadsheets
+or anything that can be created with text based templates such as HTML
+documents.

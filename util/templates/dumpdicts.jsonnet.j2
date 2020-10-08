@@ -1,0 +1,36 @@
+{#
+
+This template is for ONE TIME USE to convert an existing req/spec
+spreadsheet (xls/xlsv/csv) to the Jsonnet syntax format which will be
+used going forward.
+
+The template assumes a model like
+
+  {code:"nd-cap", specs=[...]}
+
+where "specs" is an array of row objects from the spreadsheet.
+
+The expected usage is like:
+
+  moo -A code=nd-cap -A specs=data/nd-capabilities-doorsinput.xlsx \
+    render util/dumpdicts.jsonnet util/templates/dumpdicts.jsonnet.j2
+
+-#}
+{# This maps output attribute names to input spreadsheet column names #}
+{% set trans=dict(name="Title",
+                  description="Primary Text",
+                  specification="Value",
+                  goal="Goal",
+                  rationale="Rationale",
+                  validation="Verification Method") %}
+[
+{% for one in model.specs %}
+{
+    gid: "{{model.code|upper}}-{{'%02d'|format(loop.index)}}",
+    label: "{{ "-".join(one.Title.split()) | lower}}",
+{% for k,v in trans.items() %}
+    {{k}}: "{{ one[trans[k]]|string|replace('"', '\\"') }}",
+{% endfor %}
+},
+{% endfor %}
+]
