@@ -4,12 +4,18 @@ jobs:
   build_latex:
     runs-on: ubuntu-latest
     steps:
+
       - name: Set up Git repository
         uses: actions/checkout@v1
+
       - name: Compile LaTeX document
-        uses: dante-ev/latex-action@master
+        uses: xu-cheng/latex-action@v2
         env:
           DEFAULT_BRANCH: master          
         with:
           root_file: nd-pdr.tex
 
+      - uses: actions/upload-artifact@v2
+        with:
+          name: PDF
+          path: nd-pdr.pdf
