@@ -1,3 +1,7 @@
 *~
 .lock-waf*
 build
+auto
+.envrc
+junk.*
+latexmk-out

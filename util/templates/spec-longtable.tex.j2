@@ -2,12 +2,13 @@
 
     It expects a model like:
 
-    { code: "nd-cap", specs: [...] }
+    { code: "nd-cap", specs: [...], ... }
 
     It might be exercised like:
 
     moo -A code=nd-cap -A specs=data/nd-cap.jsonnet \
-      render util/code-specs-model.jsonnet \
+      render -o generated/nd-cap-longtable.tex \
+             util/model.jsonnet \
              util/templates/spec-longtable.tex.j2
 
 #}~
@@ -19,7 +20,11 @@
        Label & Description  & Specification \newline (Goal) & Rationale & Validation \\  \colhline
 
 ~{ for req in model.specs -}~
-  \newtag{~{{ req.gid }}~}{ spec:~{{ req.label }}~ }  & ~{{ req.name }}~  &  ~{{ req.specification }}~ \newline (~{{ req.goal }}~) &  ~{{ req.rationale }}~ &  ~{{ req.validation }}~ \\ \colhline
+  \newtag{~{{ req.lid }}~}{ spec:~{{ req.label }}~ }
+  & ~{{ req.name }}~
+  &  ~{{ req.primary }}~ 
+  &  ~{{ req.rationale }}~
+  &  ~{{ req.verification_method }}~ \\ \colhline
 ~{ endfor }~
 
 \label{tab:specs:~{{ model.code|lower }}~}

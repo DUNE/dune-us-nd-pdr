@@ -1,76 +1,133 @@
 #+title: dune-us-nd-pdr utility area
 
-* What is here
+#+author: Brett Viren
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/setup/theme-readtheorg.setup
+#+HTML_HEAD: <style> #content{max-width:1800px;}</style>
+#+HTML_HEAD: <style> p{max-width:800px;}</style>
+#+HTML_HEAD: <style> li{max-width:800px;}</style>
+#+OPTIONS:   H:4 num:nil toc:2
 
-Scripts, models and templates used for generating latex and other
-artifacts from "requirement" aka "specification" data.  Data files are
-generally available in [[file:../data/][../data/]].
-
-* Data format
-
-Specification data files follow a simple subset of JSON/Jsonnet
-syntax.  A file provides an array of objects.  This outer format looks
-like:
-
-#+begin_src jsonnet
-[ {...}, {...}, ... ]
+#+name: grep
+#+begin_src shell :var re="" :var file="/dev/null"  :var a=0 :var lang="shell" :exports none :results output code
+grep -m1 -A$a "$re" "$file"
+#+end_src
+#+name: awk
+#+begin_src shell :var re="" :var file="/dev/null" :var lang="shell" :exports none :results output code
+awk "$re" "$file"
 #+end_src
 
-Each object is held in braces and consists of a key/value list of
-attributes separated by commas like this example.  Attributes from a
-specific set are considered as illustrated:
+* Intro
+
+This area holds scripts, models (data) and templates used for
+generating latex and other artifacts from "requirements" aka
+"specifications".  It also holds helpers used by the document
+auto-build system (see [[file:../wscript]]).
+
+* Data 
+
+Data files are in [[file:../data/][../data/]] and are in form of ~.xlsx~ spreadsheet files.
+
+These files are initially *imported* to DUNE-US-ND-PDR from DOORS.  Once
+imported and for the lifetime of the document we assume this
+repository holds the definitively copy.  No subsequent reimport of any
+given file (without substantial manual merging effort) is expected.
+
+While a data file is controlled by this repo it may have existing
+content updated, new columns and rows added.  
+
+An mechanism to produce a format compatible for *export* back to DOORS
+will be provided.  
+
+The cell contents of the first row of a spreadsheet are used to define
+attribute key names to build an object from the data of each
+subsequent row.  
+
+* Processing
+
+The processing of data is a pipeline:
+
+#+begin_example
+xlsx -> [model] -> [render] -> output
+#+end_example
+
+** Model
+
+The input ~.xlsx~ data is augmented into a "model" like:
 
 #+begin_src jsonnet
-{
-    gid: "ND-CAP-02",
-    label: "nd-lar-nue-identification",
-    name: "ND-LAr nue identification",
-    description: "ND-LAr must identify and reconstruct nue events as well as FD",
-    specification: ">90% efficiency, background< 3%, Enu resolution <10-15%",
-    goal: "",
-    rationale: "ND-LAr nue identification and reconstruction is needed to verify the modelling of the nue flux and cross section, as well as the respone of the FD",
-    validation: "Simulation",
-}
+  {
+      code: "...",                // string
+      specs: [...],               // ordered array of row objects
+      byid: {...},                // row objects by their id
+      bylid: {...},               // row objects by their  "legacy" id
+  }
 #+end_src
 
-These attributes are defined as:
+#+begin_note
+The "code" is simply the file name with the ~.xlsx~ extension removed.
+#+end_note
 
-- gid :: a globally-unique, permanent identifier for the rest of the spec content.  It identifies the general intent and not any specific version of the spec.  A gid may be retired.
+A row object holds the key word attributes named after the column
+titles in the ~.xlsx~ file.  In addition, each attribute is duplicated
+in the row object with a "template friendly" key word.  Friendly means
+that if a column title is found in the map below the corresponding
+value is used as the row object attribute key name and otherwise the
+column title is lower cased and any "special" characters are removed
+or converted to underscore.  The explicit mapping is:
 
-- label :: a globally unique identifier suitable for a LaTeX ~\label{}~ marker
+#+call: awk("/colmap :/,/},/", "wash_xlsx.jsonnet"): wrap "src jsonnet"
 
-- name :: an *exceedingly* brief human-oriented identifier clause, suitable for use in, /eg/ a summary table
+#+RESULTS:
+#+begin_src shell
+    colmap : {
+        "Legacy ID":            "lid",
+        "Artifact Type":        "artificat",
+	"LaTeX Label":          "label",
+	"Primary Text (LaTeX)": "primary",
+	"Value":                "value_text",
+	"Value (LaTeX)":        "value",
+	"Rationale":            "rationale_text",
+	"Rationale (LaTeX)":    "rationale",
+	"Link:Child Of (>)":    "child_link",
+	"Legacy Parent ID":     "lpid",
+	"Link:Parent Of (<)":   "parent_link",
+    },
+#+end_src
 
-- description :: longer text describing what this spec means.  It need not state the specified constraint.
+An example of the default mapping is that ~"Verification Method"~
+becomes ~"verification_method"~.  
 
-- specification :: the constraint that this specification asserts.  This should be quantitative if possible.  
+#+begin_note
+The explicit map may be extended or otherwise modified but this is
+done any existing templates may need to be updated.
+#+end_note
 
-- goal :: a more ambitious specification that potentially may be met.  Optional.
+Perhaps a bit of a hack but one can list the full set of key names in
+an object with:
 
-- rationale :: why this specification is given
+#+begin_example
+$ moo  -A code=nd-cap -A specs=data/nd-cap.xlsx compile util/model.jsonnet | jq '.specs[0]|keys'
+#+end_example
 
-- validation :: methods by which the one may demonstrate the specification is met.
-
-All attribute values except for *label* must be *valid LaTeX* content text
-and may be expected to appear in official documents.
-
-
-* Data import
-
-Some amount of support for *one time* importing of data from other
-formats is possible.  For example, if spreadsheets exist with the
-required information, or close to that, they can likely be converted
-without the need to manually edit. 
-
-An importer requires a mapping, eg, from spreadsheet columns to
-attribute key names.  If the imported data does not fully match the
-expectation, some manual editing of the imported Jsonnet file can be
-done.  Re-importing will not preserve that editing.
+Or, remove the ~|keys~ to see the object contents.
 
 
-* Data export
+** Render
 
-The main target for this system is producing LaTeX tables.  However,
-the information can also be exported to formats such as spreadsheets
-or anything that can be created with text based templates such as HTML
-documents.
+A "render" brings together a model and a template to produce some
+output file (ie, a ~.tex~ file holding a LaTeX table).  The low-level
+command looks something like:
+
+#+begin_example
+$ moo  -A code=nd-cap -A specs=data/nd-cap.xlsx \
+  render -o generated/nd-cap-longtable.tex \
+  util/model.jsonnet util/templates/spec-longtable.tex.j2
+#+end_example
+
+* Templates
+
+t.b.d.
+
+* Build
+
+t.b.d.
