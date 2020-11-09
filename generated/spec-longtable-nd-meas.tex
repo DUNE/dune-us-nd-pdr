@@ -5,16 +5,56 @@
   \rowcolor{dunesky}
        Label & Description  & Specification \newline (Goal) & Rationale & Validation \\  \colhline
 
-\newtag{ND-MEAS-01}{ spec:classify-interactions-and-measure-outgoing-particles-in-a-lartpc-with-performance-comparable-to-or-exceeding-the-fd }  & Classify interactions and measure outgoing particles in a LArTPC with performance comparable to or exceeding the FD  &  None \newline () &  The ND must observe and reconstruct the products of neutrino interaction such that we can infer how those interactions would appear in the far detector. The interactions must be observed in liquid argon and without gaps in acceptance that would leave phase space of neutrino energy and energy transfer uncovered. Due to the close coupling of detector effects with neutrino event modellling, ND measurements with a LArTPC must be made to ensure that the overall modelling of the interaction and detector response are accurate. &   \\ \colhline
-\newtag{ND-MEAS-02}{ spec:measure-outgoing-particles-in-ν-ar-interactions-with-uniform-acceptance,-lower-thresholds-than-a-lartpc,-and-with-minimal-secondary-interactions }  & Measure outgoing particles in ν-Ar interactions with uniform acceptance, lower thresholds than a LArTPC, and with minimal secondary interactions  &  None \newline () &  ND-LAr will have several challenges in addressing systematics: non-uniform acceptance  (azimuthal, against important observables such as Enu and energy transfer, etc.); significant secondary interactions, and high detection thresholds for outgoing particles due to the density of LAr. Measurements with a uniform acceptance will verify that the modelling is accurate, while the lower thresholds and minimal secondary interactions will allow the multiplicity and kinematics of outgoing hadrons from the nu-Ar interaction to be  compared against the model in detail.  &   \\ \colhline
-\newtag{ND-MEAS-03}{ spec:measure-the-neutrino-flux-using-neutrino-electron-scattering }  & Measure the neutrino flux using neutrino electron scattering  &  5% (initial); 2% (nominal) \newline () &  nu-e elastic scattering has a very well known but tiny cross section. With a sufficiently large sample of cleanly idenified events, the flux can be measured precisely and without the model dependence present in neutrino-nucleus scattering. &   \\ \colhline
-\newtag{ND-MEAS-04}{ spec:measure-the-neutrino-flux-spectrum-using-the-low-nu-method }  & Measure the neutrino flux spectrum using the low-nu method  &  5% for Enu >1 GeV (nominal) \newline () &  The nu-e elastic scattering measurement has weak constraints on the shape of the spectrum due to beam divergence. An accurate understanding of the shape is important in fully utilizing the spectral shape of the oscillations. The low-nu method allows the shape to be constrained for Enu > 1 GeV with 100 MeV recoil threshold. &   \\ \colhline
-\newtag{ND-MEAS-05}{ spec:measure-the-wrong-sign-component }  & Measure the wrong-sign component  &  10% in RHC, 40% in FHC (initial); 5% in RHC, 20% in FHC (nominal)  \newline () &  The neutrino oscillation measurements rely on measuring neutrino and antineutrino oscilllations separately in FHC/RHC operation. Particularly in RHC, there is a large component of numu events that will partially "wash out" oscillation asymmetries and is irreducible at the FD. This component must be measured and its modeling verified to verify backgrounds and the right-sign flux. &   \\ \colhline
-\newtag{ND-MEAS-06}{ spec:measure-the-intrinsic-beam-νe-component }  & Measure the intrinsic beam νe component  &  5% (initial); 2% (nominal) \newline () &  Intrinsic beam nue are irreducible and dominant background in the nue appearance analysis. This component must be measured and its modeling verified &   \\ \colhline
-\newtag{ND-MEAS-07}{ spec:take-measurements-with-off-axis-flux-with-spectra-spanning-region-of-interest }  & Take measurements with off-axis flux with spectra spanning region of interest  &  0.5-3 GeV \newline () &  Mismodelling that impacts the Enu reconstruction directly impacts neutrino oscillation measurements, since this is a key observable. Varying the incident flux by placing ND-LAr (+TMS/ND-GAr) at different off-axis positions allow the modeling of the reconstruction to be explicitly verfied. The upper limit is set by the variation that can be probed by this method. The lower limit set by the range over which DUNE will perform long baseline neutrino oscillation measurements. &   \\ \colhline
-\newtag{ND-MEAS-08}{ spec:monitor-the-rate-of-neutrino-interactions-on-axis }  & Monitor the  rate of neutrino interactions on-axis  &  <1%/week \newline () &  Since the oscillation measurements are made with the on-axis flux and measurements are required off-axis, a component of the near detector must remain on-axis to perform the beam monitoring masurements &   \\ \colhline
-\newtag{ND-MEAS-09}{ spec:monitor-the-beam-spectrum-on-axis }  & Monitor the beam spectrum on-axis  &  None \newline () &  Rate information alone is insufficient to detect some beam variations that will impact the oscillation analysis. The beam monitoring must use spectrum information from muon/neutrino energy.  &   \\ \colhline
-\newtag{ND-MEAS-10}{ spec:assess-external-backgrounds }  & Assess External Backgrounds  &  None \newline () &  Due to the shallow site and the intensity of the neutrino beam, near detectors operates in an environment with cosmic rays and a high level of beam-induced background activity. In order to verify that these backgrounds are correctly accounted for and modeled, the near detector must be able to measure them.  &   \\ \colhline
+\newtag{ND-M3}{ spec:nu-e-scatt-flux }
+  & Nu-electron scattering flux measurements 
+  &  The ND must measure the flux with $\nu$-e scattering, a standard candle that provides a normalization measurement. 
+  &  $\nu$-e elastic scattering has a very well known but tiny cross section. With a sufficiently large sample of cleanly idenified events, the flux can be measured precisely and without the model dependence present in $\nu$-nucleus scattering.
+  &   \\ \colhline
+\newtag{ND-M8}{ spec:tms-on-axis-numu-rate }
+  & TMS: On-axis numu interaction rate
+  &  The ND must have a component that remains on-axis where beam monitoring is most sensitive in order to identify a sufficient number of $\nu_\mu$ CC events to satisfy the beam monitoring requirements.  
+  &  Since the oscillation measurements are made with the on-axis flux and measurements are required off-axis, a component of the near detector must remain on-axis to perform the beam monitoring masurements.
+  &   \\ \colhline
+\newtag{ND-M10}{ spec:ext-bkgd-meas }
+  & External background measurements
+  &  The ND must be able to measure external backgrounds, which include cosmic rays and beam-induced activity. 
+  &  Due to the shallow site and the intensity of the neutrino beam, the ND operates in an environment with cosmic rays and a high level of beam-induced background activity. In order to verify that these backgrounds are correctly accounted for and modeled, the ND must be able to measure them. 
+  &   \\ \colhline
+\newtag{ND-M6}{ spec:beam-nue-bkgd }
+  & Intrinsic beam nue measurements
+  &  The ND must measure and validate the modelling of intrinsic beam $\nu_e$, an irreducible background. 
+  &  Intrinsic beam $\nu_e$ are irreducible and dominant background in the $\nu_e$ appearance analysis. This component must be measured and its modeling verified.
+  &   \\ \colhline
+\newtag{ND-M5}{ spec:wrong-sign-meas }
+  & Wrong-sign interaction measurements
+  &  The ND must measure and validate the modelling of wrong-sign interactions that dilute the oscillation asymmetries at the FD. 
+  &  The neutrino oscillation measurements rely on measuring neutrino and antineutrino oscilllations separately in FHC/RHC operation. Particularly in RHC, there is a large component of numu events that will partially ``wash out'' oscillation asymmetries and is irreducible at the FD. This component must be measured and its modeling verified to verify backgrounds and the right-sign flux.
+  &   \\ \colhline
+\newtag{ND-M1}{ spec:ndlar-reco-like-fd }
+  & ND-LAr reconstruction comparable to FD
+  &  The ND must have a LArTPC with reconstruction capabilities comparable/exceeding the far detector in order to effectively transfer measurements. 
+  &  The ND must observe and reconstruct the products of neutrino interaction such that we can infer how those interactions would appear in the far detector. The interactions must be observed in liquid argon and without gaps in acceptance that would leave phase space of neutrino energy and energy transfer uncovered. Due to the close coupling of detector effects with neutrino event modellling, ND measurements with a LArTPC must be made to ensure that the overall modelling of the interaction and detector response are accurate.
+  &   \\ \colhline
+\newtag{ND-M2}{ spec:ndlar-recoil-meas }
+  & ND-LAr recoil particle measurements
+  &  The ND must measure outgoing recoil particles ($\pi$, p, $\gamma$) in $\nu$-Ar interactions with uniform acceptance, lower thresholds than a LArTPC, and with minimal secondary interactions to ensure that sensitive phase space is properly modeled. 
+  &  ND-LAr will have several challenges in addressing systematics: non-uniform acceptance  (azimuthal, against important observables such as $E_\nu$ and energy transfer, etc.); significant secondary interactions, and high detection thresholds for outgoing particles due to the density of LAr. Measurements with a uniform acceptance will verify that the modelling is accurate, while the lower thresholds and minimal secondary interactions will allow the multiplicity and kinematics of outgoing hadrons from the $\nu$-Ar interaction to be  compared against the model in detail.
+  &   \\ \colhline
+\newtag{ND-M4}{ spec:low-nu-flux-spectrum }
+  & Low-nu flux spectrum measurements
+  &  The ND must identify/measure low recoil energy events that have flat energy dependence in order to measure the neutrino flux spectrum (``low-nu'' method). 
+  &  The $\nu$-e elastic scattering measurement has weak constraints on the shape of the spectrum due to beam divergence. An accurate understanding of the shape is important in fully utilizing the spectral shape of the oscillations. The low-nu method allows the shape to be constrained for $E_\nu >$\SI{1}{GeV} with \SI{100}{MeV} recoil threshold.
+  &   \\ \colhline
+\newtag{ND-M9}{ spec:tms-on-axis-bm-monitor }
+  & TMS: On-axis beam monitoring
+  &  The ND must use on-axis spectrum information to detect representative changes in the beamline. 
+  &  Rate information alone is insufficient to detect some beam variations that will impact the oscillation analysis. The beam monitoring must use spectrum information from muon/neutrino energy. 
+  &   \\ \colhline
+\newtag{ND-M7}{ spec:prism-off-axis-meas }
+  & PRISM: Off-axis measurements
+  &  The ND must be able to move off the beam axis to take data with neutrino spectra varying across the region of interest for neutrino oscillation measurements. 
+  &  Mismodelling that impacts the $E_\nu$ reconstruction directly impacts neutrino oscillation measurements, since this is a key observable. Varying the incident flux by placing ND-LAr (+TMS/ND-GAr) at different off-axis positions allow the modeling of the reconstruction to be explicitly verfied. The upper limit is set by the variation that can be probed by this method. The lower limit set by the range over which DUNE will perform long-baseline neutrino oscillation measurements.
+  &   \\ \colhline
 
 \label{tab:specs:nd-meas}
 \end{longtable}

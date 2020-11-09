@@ -5,13 +5,41 @@
   \rowcolor{dunesky}
        Label & Description  & Specification \newline (Goal) & Rationale & Validation \\  \colhline
 
-\newtag{ND-OVERARCH-01}{ spec:predict-the-observed-neutrino-spectrum-at-the-fd }  & Predict the observed neutrino spectrum at the FD  &  overarching requirements do not have values \newline () &  In combination with available external information, the long baseline analysis requires that we predict the number, spectrum, and flavor of neutrinos observed at the far detector, as well as backgrounds, along with any other information about these events that are used in the analysis. &   \\ \colhline
-\newtag{ND-OVERARCH-02}{ spec:transfer-measurements-to-the-fd }  & Transfer measurements to the FD  &  None \newline () &  The ND must be able to measure interactions on a Ar target, and furthermore transfer observables as they would be seen in the FD LArTPCs. The transfer must be performed accounting for uncertainties arising from detector modelling, including thresholds, efficiencies, purities, and resolution in the context of observables that are used in the far detector, the neutrino interaction model, the flux, as well as the differing operating conditions in the near and far site (cosmic rate, beam interaction rate/backgrounds, etc.). &   \\ \colhline
-\newtag{ND-OVERARCH-03}{ spec:constrain-the-cross-section-model }  & Constrain the cross section model  &  None \newline () &  The FD response couples the modelling of outgoing particles in nu-Ar interactions in terms of the mulitplicity, topology, and kinematics, to the ability to reconstruct these  particles. The near detector must sufficiently measure and constrain the uncertainties in this modelling to minimize their impact on the oscillation measurement. &   \\ \colhline
-\newtag{ND-OVERARCH-04}{ spec:measure-the-neutrino-flux }  & Measure the neutrino flux  &  None \newline () &  The ab initio prediction of the neutrino flux is based on Monte Carlo simulation which has uncertainties arising from particle production, beam optics, operational variation, etc. that must be verified and constrained by the near detector. Secondary components of the flux give rise to irreducible backgrounds in the FD which must be constrained &   \\ \colhline
-\newtag{ND-OVERARCH-05}{ spec:obtain-measurements-with-different-fluxes }  & Obtain measurements with different fluxes  &  None \newline () &  The flux and spectrum of neutrinos can be varied by moving the detectors off-axis or changing the horn currents. The near detector must verify that its model predictions and constraints are robust against these variations, which would otherwise give rise to degenerate tunings that bias the FD predictions and the resulting oscillation parameters. &   \\ \colhline
-\newtag{ND-OVERARCH-06}{ spec:monitor-time-variations-of-the-neutrino-beam }  & Monitor time variations of the neutrino beam   &  None \newline () &  The flux and spectrum of neutrinos delivered by the beam can vary due to operational variations as well as unexpected component variances or failures. The near detector must detect such variations in such a way that they can be identifed promptly and any compromised beam delivery is minimized. &   \\ \colhline
-\newtag{ND-OVERARCH-07}{ spec:operate-in-high-rate-environment }  & Operate in high rate environment  &  None \newline () &  The ND operates in a significantly different environment from the FD, with  higher cosmic ray rates as well as pile up of beam-related activity (including other neutrino interactions). The ND must be robust against this additional activity in fulfilling the other overarching requirements. &   \\ \colhline
+\newtag{ND-O6}{ spec:high-rate-env }
+  & Operate in high rate environment
+  &  All ND components must fulfill requirements in the presence of cosmics, beam-related backgrounds and pileup. 
+  &  The ND operates in a significantly different environment from the FD, with  higher cosmic ray rates as well as pile up of beam-related activity (including other neutrino interactions). The ND must be robust against this additional activity in fulfilling the other overarching requirements.
+  &   \\ \colhline
+\newtag{ND-O5}{ spec:time-variation-beam }
+  & Monitor time variations of the neutrino beam 
+  &  The ND must detect potential variations in the neutrino flux. 
+  &  The flux and spectrum of neutrinos delivered by the beam can vary due to operational variations as well as unexpected component variances or failures. The near detector must detect such variations in such a way that they can be identifed promptly and any compromised beam delivery is minimized.
+  &   \\ \colhline
+\newtag{ND-O2}{ spec:constrain-xsec-model }
+  & Constrain the cross section model
+  &  Systematic errors from cross section modeling couple the FD response to the neutrino energy/flavor. 
+  &  The FD response couples the modelling of outgoing particles in $\nu$-Ar interactions in terms of the mulitplicity, topology, and kinematics, to the ability to reconstruct these  particles. The near detector must sufficiently measure and constrain the uncertainties in this modelling to minimize their impact on the oscillation measurement.
+  &   \\ \colhline
+\newtag{ND-O3}{ spec:nu-flux-meas }
+  & Measure the neutrino flux
+  &  The ND must verify and constrain the flux beyond what is achieved by ab initio modeling of the neutrino beam. 
+  &  The ab initio prediction of the neutrino flux is based on Monte Carlo simulation which has uncertainties arising from particle production, beam optics, operational variation, etc. that must be verified and constrained by the near detector. Secondary components of the flux give rise to irreducible backgrounds in the FD which must be constrained.
+  &   \\ \colhline
+\newtag{ND-O4}{ spec:diff-flux-meas }
+  & Obtain measurements with different fluxes
+  &  The ND must verify that model predictions are robust with different neutrino fluxes. 
+  &  The flux and spectrum of neutrinos can be varied by moving the detectors off-axis or changing the horn currents. The near detector must verify that its model predictions and constraints are robust against these variations, which would otherwise give rise to degenerate tunings that bias the FD predictions and the resulting oscillation parameters.
+  &   \\ \colhline
+\newtag{ND-O0}{ spec:predict-nu-spectrum }
+  & Predict  observed nu spectrum at FD
+  &  With available external information, the ND must predict observables at the FD needed for the oscillation analysis in the presence of oscilllation effects. 
+  &  In combination with available external information, the long baseline analysis requires that we predict the number, spectrum, and flavor of neutrinos observed at the far detector, as well as backgrounds, along with any other information about these events that are used in the analysis.
+  &   \\ \colhline
+\newtag{ND-O1}{ spec:xfer-meas-to-fd }
+  & Transfer measurements to the FD
+  &  Measurements at the ND must be transferable to the FD in order to minimize systematic uncertainties. 
+  &  The ND must be able to measure interactions on a Ar target, and furthermore transfer observables as they would be seen in the FD LArTPCs. The transfer must be performed accounting for uncertainties arising from detector modelling, including thresholds, efficiencies, purities, and resolution in the context of observables that are used in the far detector, the neutrino interaction model, the flux, as well as the differing operating conditions in the near and far site (cosmic rate, beam interaction rate/backgrounds, etc.).
+  &   \\ \colhline
 
 \label{tab:specs:nd-overarch}
 \end{longtable}

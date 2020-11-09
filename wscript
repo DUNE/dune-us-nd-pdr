@@ -30,18 +30,19 @@ Also remove configuration.  You will need to start over to do more.
 '''
 
 import os
+import waflib.Tools.tex
 
 APPNAME = 'dune-us-nd-pdr'
 VERSION = '0.0'
-top='.'
+top = '.'
 
 # "top-level" reqs/spec names
-TOP_LEVEL_SPECS = ('SP-FD','DP-FD')
+TOP_LEVEL_SPECS = ('SP-FD', 'DP-FD')
 
-import waflib.Tools.tex
 
 # Add extensions so matches get into the manifest for arxiv tarball.
-waflib.Tools.tex.exts_deps_tex.extend(['.jpg', '.jpeg', '.PDF', '.JPG', '.PNG'])
+waflib.Tools.tex.exts_deps_tex.extend(
+    ['.jpg', '.jpeg', '.PDF', '.JPG', '.PNG'])
 
 # Return the cover PDF file name or None.
 #
@@ -60,10 +61,12 @@ def options(opt):
     opt.add_option('--arxiv', default=False, action='store_true',
                    help="make a tarbal for each volume suitable for upload to arXiv")
 
+
 def configure(cfg):
     cfg.load('tex')
     cfg.find_program('moo', var='MOO', mandatory = False);
     cfg.env.PDFLATEXFLAGS += [ "-file-line-error", "-recorder", ]
+
 
 def nice_path(node):
     return node.path_from(node.ctx.launch_node())
@@ -90,23 +93,23 @@ def tarball(task):
 
 
 from waflib.TaskGen import feature, after_method, before_method
-@feature('tex') 
-@after_method('apply_tex') 
-def create_another_task(self): 
+@feature('tex')
+@after_method('apply_tex')
+def create_another_task(self):
     #print ("create another task")
-    tex_task = self.tasks[-1] 
+    tex_task = self.tasks[-1]
     doc = tex_task.outputs[0]
     volname = os.path.splitext(str(doc))[0]
     man = volname + '.manifest'
     man_node = self.bld.path.find_or_declare(man)
     fls_node = self.bld.path.find_or_declare(volname + '.fls')
-    at = self.create_task('manifest', [fls_node]+tex_task.outputs, man_node) 
+    at = self.create_task('manifest', [fls_node]+tex_task.outputs, man_node)
     #at.outputs.append(man_node)
     # make tex task info available to manifest task
-    at.tex_task = tex_task 
-    # rebuild whenever the tex task is rebuilt 
+    at.tex_task = tex_task
+    # rebuild whenever the tex task is rebuilt
     at.dep_nodes.extend(tex_task.outputs)
-    #print("CREATE MANIFEST",tex_task.outputs) 
+    #print("CREATE MANIFEST",tex_task.outputs)
     # There is an, apparently harmless, warning about the .manifest
     # file being created more than once, and by the same task
     # generator.  This suppresses the error message.
@@ -161,26 +164,38 @@ class manifest(Task):
                 one = one.strip()
                 if not one:
                     continue
-                
+
                 n = top_node.make_node(one)
                 if not n.exists():
                     print("WARNING: no such file for manifest: %s" % n.abspath())
                 fp.write(one.strip() + '\n')
-    
+
 
 def regenerate(bld):
     '''
-    Make tasks to regenerate files from "requirements" spreadsheets. 
+    Make tasks to regenerate files from "requirements" spreadsheets.
     '''
     reqsdeps = list()
     if not bld.env['MOO']:
-        print ("Note: moo not found, will not try to rebuild requirements files")
+        print("Note: moo not found, no regen will be done")
         return reqsdeps
-    
-    # Despite knowing better, generate into the source directory.
-    # gen_dir = bld.srcnode.make_node('generated')
-    # reqdefs = gen_dir.make_node('reqdefs.tex')
-    # reqdefs.write('% generated file, do not edit','w')
+
+    # Despite knowing better, we will land generated files in the
+    # source directory for committing so that everyone need not have
+    # moo installed.
+    gen_dir = bld.srcnode.make_node('generated')
+
+    # A single type of rendering so far: "long table"
+    model = bld.srcnode.find_resource("util/model.jsonnet")
+    tmpl = bld.srcnode.find_resource("util/templates/spec-longtable.tex.j2")
+    for ss in bld.srcnode.ant_glob("data/*.xlsx"):
+        code = ss.name.replace('.xlsx', '')
+        out = gen_dir.make_node('spec-longtable-%s.tex' % code)
+        cmd = "${MOO} -A specs=${SRC[0].abspath()} -A code=%s " % code
+        cmd += "render -o ${TGT} ${SRC[1].abspath()} ${SRC[2].abspath()}"
+        #print(out)
+        bld(rule=cmd, source=[ss, model, tmpl], target=[out])
+        reqsdeps.append(out)
 
     #... make tasks to run moo
     return reqsdeps
@@ -192,9 +207,9 @@ def build(bld):
     if bld.options.debug:
         prompt_level = 1
 
-    #reqsdeps = regenerate(bld)        
+    reqsdeps = regenerate(bld)
 
-    voltexs = ["nd-pdr.tex"]
+    voltexs = ["nd-pdr.tex", "all-generated.tex"]
     maintexs = list()
     for volind, voltex in enumerate(voltexs):
         volnode = bld.path.find_resource(voltex)
@@ -204,25 +219,21 @@ def build(bld):
         voltar = bld.path.find_or_declare('%s-%s.tar.gz' % (volname, VERSION))
         volman = bld.path.find_or_declare(volname + '.manifest')
         maintexs.append(volnode)
-        print (locals())
 
         # Task to build the volume
         bld(features='tex',
-            prompt = prompt_level,
-            type = 'pdflatex',
-            source = [volnode],
-            target = volpdf.name)
-        #for reqnode in reqsdeps:
-        #    bld.add_manual_dependency(volnode, reqnode)
+            prompt=prompt_level,
+            type='pdflatex',
+            source=[volnode],
+            target=volpdf.name)
+        # for reqnode in reqsdeps:
+        #     bld.add_manual_dependency(volnode, reqnode)
         bld.install_files('${PREFIX}', [volpdf])
-        
-        
+
         if bld.options.arxiv:
-            #print (voltar)
             bld(source=[volman, voltex],
                 target=[voltar],
-                prefix = '%s-%s-%s/' % (APPNAME, volname, VERSION),
-                extra = voltex + ' utphys.bst dune.cls graphics/dunelogo_colorhoriz.jpg',
+                prefix='%s-%s-%s/' % (APPNAME, volname, VERSION),
+                extra=voltex + ' utphys.bst dune.cls graphics/dunelogo_colorhoriz.jpg',
                 rule=tarball)
             bld.install_files('${PREFIX}', [voltar])
-
