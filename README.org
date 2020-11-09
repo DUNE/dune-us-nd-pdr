@@ -1,0 +1,18 @@
+#+title: DUNE Near Detector US Preliminary Design Report
+
+* Links
+
+- [[https://github.com/DUNE/dune-us-nd-pdr][GitHub repo]]
+- [[file:util/README.org][Info on table generation]]
+
+* Build
+
+You may build the documents in the usual LaTeX manner.  
+
+This and some ancillary processing is also automated using Waf:
+
+#+begin_example
+  $ waf configure 
+  $ waf
+#+end_example
+

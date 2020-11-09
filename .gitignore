@@ -5,3 +5,14 @@ auto
 .envrc
 junk.*
 latexmk-out
+*.ist
+*.toc
+*.tdo
+*.out
+*.lot
+*.lof
+*.glo
+*.aux
+*.log
+nd-pdr.pdf
+all-generated.pdf
