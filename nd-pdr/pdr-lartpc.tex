@@ -5,6 +5,19 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Overview of ND-LAr}
 \label{sec:lartpc-ovvw}
+{\it Jonathan, with help from Dan D., 5 pages}
+
+One of the key aspects of the DUNE near detector is its ability to reduce cross section and detector systematic uncertainties in the oscillation analysis. One of the most direct ways to accomplish this is to have the target material of the near detector match that of the far detector. In the case of DUNE, this means ensuring a liquid argon (LAr) detector as part of the DUNE near detector complex. 
+
+A problem is given the relatively slow readout of conventional monolithic liquid argon time projection chambers (LArTPC's), the extremely high neutrino flux expected in the near detector, and the large number of events; common wire-based readouts would be stretched beyond their ability to reconstruct events with high fidelity. 
+
+A new generation of LArTPC's based on a more flexible modular design and powerful new native 3D pixel readout allows for a LArTPC to overcome the challenges of operating in the DUNE near detector environment. This design of LArTPC, based on the ArgonCube technology, utilizes thin materials to minimize the dead material introduced through modularization and new dielectric light detection techniques to leverage the optical segmentation and increase the light yield in each module. When these two techniques are coupled with pixelized charge readou, which provides unambiguous
+3D imaging of particle interactions, a powerful new LArTPC detector capable of providing the necessary measurements needed by the DUNE oscillation physics measurements can be realized.
+
+The LAr component (ND-LAr) of the DUNE ND is made up of a configuration of ArgonCube LArTPCs large enough to provide the required hadronic shower containment and statistics. NDLAr is the most upstream of the three subdetectors in the DUNE ND complex.
+
+The subsequent sections will lay out the details of the ND-LAr system. Section \ref{sec:lartpc-ovvw-intro} will provide an overview of the detector principle and an overview of the scope of the ND-LAr consortium. Section \ref{sec:lartpc-ovvw-op}.....
+
 
 
 %%%%%%%%%%%%%%%
@@ -12,17 +25,120 @@
 \label{sec:lartpc-ovvw-intro}
 
 
+
+
+Introduction:
+\begin{itemize}
+\item Reminder of specific role of ND LArTPC in ND suite (tie to Hiro's intro)
+    \begin{itemize}
+        \item ND LArTPC provides high-stats beam-nu on argon in LArTPC sample to enable accurate ($\sim$2\%) prediction of FD LArTPC signal
+        \item Large enough to contain relevant nu-Ar signals (minus forward-going muons and fast neutrons)
+        \item Works in tandem with downstream muon spectrometer (TMS) to fully reconstruct neutrino interaction
+        \item ND LArTPC spec moves off-axis (PRISM) to provide samples with varying neutrino energy.
+        \item ND LArTPC signal sample (10$^7$ / yr) provides workhorse data set for validating FD neutrino interaction and detector model, validation of reconstruction techniques, and systematic studies.
+    \end{itemize}
+\item Brief description of system, with diagram
+    \begin{itemize}
+        \item Optically-separated LArTPC modules
+        \item hosted within common LAr bath in membrane cryostat
+        \item with adjacent cryogenics mezzanine
+        \item all on mobile PRISM platform
+        \item serviced by flexible energy chain
+    \end{itemize}
+\end{itemize}
+
+{\it Insert figure of ND LArTPC detector system, with labels.}
+
+Description of Consortium Scope:
+\begin{itemize}
+\item Detector effort organized as DUNE Consortium
+\item Consortium delivers LArTPC modules with supporting warm electronics systems (HV, r/o electronics, power supplies)
+\item TPC Module components consist of:
+\begin{itemize}
+    \item Low-profile Cathode and Field Cage
+    \item Pixelated Charge Readout System
+    \item High-coverage Light Readout System
+    \item Calibration systems
+    \item Module support structures (e.g. mechanical interfaces to cryostat, internal cryogenics routing, thermal monitoring)
+    \item High Voltage system (warm-side)
+\end{itemize}
+\item Consortium also manages integration and testing of LArTPC Modules for ND (i.e. Module integration facility) for assembly and full operational test of each TPC module before delivery to Near Site.
+\item Consortium support installation of Modules in near site cryostat (in cooperation with Near Site Integration team)
+\item Briefly describe major interfaces: Cryostat, Cryogenics, DAQ/Controls, Near Site Integration
+\end{itemize}
+
+{\it Insert Figure of ND LArTPC single module, with labels.}
+
+
 %%%%%%%%%%%%%%%
 \subsection{Principle of Operation}
 \label{sec:lartpc-ovvw-op}
+
+Detector principle:
+
+As charged particles traverse the bulk material they produce ionization electrons and scintillation photons. An external electric field allows the ionization electrons to drift towards the anode of the detector and be collected on charge sensitive readout. The combined measurement of the scintillation light, providing the $t_0$, and the arrival time of the ionization charge allows for the 3D reconstruction of the original charged particle topology within TPC. Thus the TPC provides a fully active tracking detector with calormetric reconstruction capabilities without instrumenting the bulk volume of the detector.
+
+
+This detector has the same target nucleus and uses the same fundamental detection principles
+as the FD. The differences between the two are needed because of the expected intensity of the
+beam at the ND. The use of the same target nucleus and a similar technology reduces sensitivity
+to nuclear effects and detector-driven systematic uncertainties in the extraction of the oscillation
+signal at the FD. ND-LAr is large enough to provide high statistics ($1 \times 10^8 \nu_\mu$-CC events/year
+on axis) and a sufficient volume to provide containment of the hadronic system. The tracking and
+energy resolution, combined with the fiducial mass of ND-LAr, will allow for the measurement of
+the flux in the beam using several techniques, including the rare process of $\nu - e$ scattering. ND-LAr alone begins to lose acceptance for muons above $\sim0.7$ GeV/c due to lack of containment.
+Because the muon momentum and charge are critical components of the neutrino energy determination, a magnetic spectrometer is needed downstream of ND-LAr to measure both quantities.
+.
+
+
+\begin{itemize}
+    \item ND LArTPC serves as workhorse for DUNE studies of neutrino-argon interactions in LArTPC
+    \item LBNF beam spill generates intense pulse of few-GeV-energy neutrinos, mostly muon flavor (with negligible oscillation at NS)
+    \item Neutrinos interact with argon nucleus within active region of LArTPC.
+    \item Interaction generates energetic lepton (mostly GeV-scale muons), and recoiling hadronic component from nucleus.
+    \item Muon generally exits LArTPC, energy measured using downstream spectrometer.
+    \item Complex hadronic shower component contained within active LArTPC.
+    \item Leptons/hadrons ionizes argon in LArTPC, electrons drift to anode due to applied electric field (1.6~mm/us at 500~V/cm), are imaged using pixelated grid of charge-sensitive anode pads (4~mm pitch).  
+    \item Combination of pixel 2D coordinates on anode and signal arrival time at pixel enable true 3D image of ionization.
+    \item Detection of corresponding argon scintillation light produced by lepton/hadron interactions provides complementary measurement of signal position and energy, albeit at much lower granularity, but with substantially more accurate timing ($\sim$20~ns).
+\end{itemize}
+
+{\it Insert image of typical numu CC interaction in ND LArTPC, maybe also showing muon into TMS?}
+
+Pileup discussion:
+\begin{itemize}
+    \item Mention beam spill time structure (10~us wide with bunch substructure) and frequency ($\sim$1~Hz)
+    \item Discuss signal rate per spill (~50 nu/spill), and provide breakdown: fiducial/contained signal fraction, fraction not contained, fraction with vertex outside active volume, fraction rock muons.
+    \item Slow electron drift in LAr (300~us drift window for 50~cm TPC cathode-anode distance) means all charge signals within one spill effectively simultaneous, while next spill is well-separated.
+    \item Negligible cosmic ray rate ($\sim$0.3) during spill plus drift window, given 60~m ND depth.
+    \item 3D pixel charge readout continuously collects and digitizes arriving charge, reporting charge arrival time with 200~ns precision, and corresponding charge amplitude within $\sim$2~us-wide bins.
+    \item Beam spill witdh of 10~us tags signal drift distance (e.g. T0) to $\sim$16~mm, already reasonably good.  
+    \item ND light system has different role than FD; must time-tag charge signal sub-clusters to enable accurate association of all charge to proper neutrino event (accuracy), and reject pileup of charge from other neutrino signals (purity).
+\end{itemize}
+
+{\it Insert image of single LBNF beam spill in ND LArTPC from Brooke's study.}
 
 %%%%%%%%%%%%%%%
 \subsection{Design Parameters}
 \label{sec:lartpc-ovvw-param}
 
-The \dword{ndlar} is designed to meet the physics requirements of the \dword{dune} experiment. 
-The important design parameters are given in Table~\ref{tab:table-ndlar-params}. 
+ND LArTPC design parameters driven by two major themes:
+\begin{itemize}
+    \item Provide signal fidelity at least as good as FD (e.g. motivates LArTPC similar to FD design).  Drives many detector attributes:
+    \begin{itemize}
+        \item size: hadronic containment
+        \item detector spatial/temporal/energy resolutions: as good or better than FD
+        \item detector systematics: field strength, uniformity, purity, etc.
+    \end{itemize}
+    \item Cope with ND pileup (i.e. motivates detector different than FD design):
+    \begin{itemize}
+        \item 3D pixelated readout: no spatial ambiguities in high pileup environment
+        \item optical segmentation: accurately associate disconnected charge clusters to correct primary event
+        \item high-coverage light detection: provide light-based time/position/amplitude signal resolutions to enable accurate charge signal clustering. [Note: T0 performance is not as important as for FD light system, given narrow beam spill time (10 us).  T0 still useful for non-beam signal studies (e.g. cosmic rays, 39Ar, BSM physics?).]
+    \end{itemize}
+\end{itemize}
 
+The important design parameters are given in Table~\ref{tab:table-ndlar-params}. 
 
 \begin{dunetable}
 [Placeholder for parameter table]
@@ -38,33 +154,636 @@ Row 3 & Third \\ % no \colhline on final row
 %%%%%%%%%%%%%%%
 \subsection{Performance}
 \label{sec:lartpc-ovvw-perf}
+{\it Andy M., Chris M., 4-6 pages}
 
+The performance characteristics of ND-LAr are driven by physics requirements for the samples entering the long-baseline oscillation analysis. For example, well-matched reconstruction performance and kinematic acceptance are important for joint analysis and mitigating systematic uncertainties. Additionally, with the dense target and intense beam, the ND-LAr must be capable of uniquely reconstructing the tens of neutrino interactions expected per spill, maintaining high efficiency and minimal bias in this high-pileup environment. This section describes the high-level detector performance parameters relevant to the joint LBL analysis, including inputs based on a fully simulated and reconstructed event samples with a realistic detector geometry and beam conditions.
 
+\subsubsection{ND-LAr key measurements}
+
+Measurements made in ND-LAr feed directly into long-baseline neutrino oscillation analyses. The role of these measurements is to constrain systematic uncertainties on the neutrino flux and neutrino-argon interaction cross sections. The key measurements fall into three broad categories:
+
+\begin{itemize}
+    \item Charged-current $\nu_{\mu}$ as a function of off-axis angle
+    \item Direct flux constraints: $\nu-e$ elastic scattering and low-$\nu$ CC $\nu_{\mu}$
+    \item Exclusive, multidimensional $\nu$-Ar measurements
+\end{itemize}
+
+ND-LAr must be capable of identifying and selecting events in the various categories, and measuring key kinematic quantities precisely and without bias. The primary function of CC $\nu_{\mu}$ inclusive scattering measurements is to use linear combinations of samples at different off-axis angles to build oscillated \dword{fd} spectra. The reconstructed neutrino energy must be measured by combining a calorimetric measurement of the hadronic system with a measurement of the outgoing muon. Both of these must match or exceed the precision of the \dword{fd}. The acceptance will be different in ND-LAr and \dword{fd}, and must be corrected. This can be done directly with data except in kinematic regions where the ND-LAr acceptance is less than 10\%.
+
+Direct flux constraints are critical because they break a degeneracy between flux and cross section uncertainties. Neutrino-electron elastic scattering is a pure electroweak process with known cross section at tree level. The signal is a single, forward electron with no other final-state particles. Selecting $\nu+e$ events requires precise reconstruction of $E_{e}\theta_{e}^{2}$, which places requirements on the electromagnetic shower reconstruction, and especially the energy and angular resolution of electromagnetic showers. Low-$\nu$ CC $\nu_{\mu}$ scattering has a cross section that is independent of neutrino energy in the limit where the hadronic energy approaches zero. This enables a direct measurement of the flux shape, but requires precise calibration of the muon energy scale, and also the ability to identify events with very small hadronic energy. Tagging final-state fast neutrons, even if their energy cannot be precisely measured, is valuable.
+
+Finally, ND-LAr exclusive measurements provide constraints on neutrino-argon interactions. The high rate of ND-LAr enables high-statistics, highly multi-dimensional measurements, where the allowed granularity will likely be limited by detector resolution. Separating events into various exclusive samples greatly enhances the constraining power. Interesting CC samples include $0\pi$, $1\pi^{+}$, $1\pi^{0}$, and multi-pion. Measurements should be made as a function of both lepton kinematics ($E_{\mu}$ and $\theta_{\mu}$ or transverse momentum $p_{T}$), and details of the hadronic system ($E_{\pi}$ and $\theta_{\pi}$, or $Q^{2}$). These measurements require muon reconstruction, particle identification 
+(especially charged and neutral pion identification), and hadronic energy reconstruction.
+
+\paragraph{Event rates} \textcolor{red}{(CDR)}
+
+In the oscillation region of $\SI{0.5} < E_\nu < \SI{4}{\giga\electronvolt}$, the expected event rate in the \SI{50}{\tonne} fiducial volume of \dword{ndlar} is 59 million \numu \dword{cc} interactions per year in \dword{fhc} mode and 20 million \anumu \dword{cc} interactions per year in \dword{rhc} mode. Of those, over 24 million (10 million) are expected to have a well-reconstructed muon of the appropriate sign, and a well-contained hadronic system in \dword{fhc} (\dword{rhc}). In addition, 450,000 $\nue+\anue$ \dword{cc} interactions are expected per year in \dword{fhc}, and 200,000 in \dword{rhc}. The expected event rate per one year of exposure on axis is shown in Figure~\ref{fig:argoncube_eventrate} as a function of true neutrino energy.
+
+\begin{dunefigure}[Neutrino interaction rates in the \SI{50}{\tonne} \dword{arcube} fiducial volume]{fig:argoncube_eventrate}
+{The rate of \dword{cc} interactions in the fiducial volume of \dword{ndlar} as a function of true neutrino energy, expressed per year of exposure assuming \SI{1.2}{\mega\watt} beam intensity in \dword{fhc} (left) and \dword{rhc} (right) beam polarity.}
+	\includegraphics[width=0.48\textwidth]{graphics/event_rate_FHC.pdf}
+	\includegraphics[width=0.48\textwidth]{graphics/event_rate_RHC.pdf}
+\end{dunefigure}
+
+Event rates for different final states are given in Tables~\ref{tab:FHC_rates} and~\ref{tab:RHC_rates} for \dword{fhc} and \dword{rhc} beam modes, respectively. The tables are based on a simulation of GENIE version 2.12.10 with the \texttt{DefaultPlusCCMEC} physics list. The first two columns give the total rate, and the estimated number of well-reconstructed events. The second two columns give the same quantities but restricted to the oscillation region.
+
+\begin{dunetable}
+	[Event rate table FHC]
+	{ccccc}
+	{tab:FHC_rates}
+	{\dword{fhc} Event rates in \dword{ndlar}. Accepted is defined a the $\mu$ is either contained or matched to  \dword{ndgar}, and the hadronic shower is contained (\textless\SI{30}{\mega\electronvolt} in the outermost \SI{30}{\centi\metre} of the LAr).}
+	\dword{fhc} mode & total & accepted & \SIrange{0.5}{4.0}{\giga\electronvolt} & accepted \\ \toprowrule
+	\dword{cc}\,$\nu_\mu$ & 8.21e+07 & 3.01e+07 & 5.88e+07 & 2.41e+07 \\ \colhline
+	\dword{cc}\,$\bar{\nu_\mu}$ & 3.56e+06 & 1.47e+06 & 1.09e+06 & 5.29e+05 \\ \colhline
+	\dword{nc} total & 2.76e+07 & 1.66e+07 & 1.9e+07 & 1.36e+07 \\ \colhline
+	\dword{cc}\,$\nu_\mu+$\,0\,$\pi$ & 2.93e+07 & 1.57e+07 & 2.57e+07 & 1.34e+07 \\ \colhline
+	\dword{cc}\,$\nu_\mu+$\,1\,$\pi^{\pm}$ & 2.04e+07 & 7.48e+06 & 1.66e+07 & 6.04e+06 \\ \colhline
+	\dword{cc}\,$\nu_\mu+$\,1\,$\pi^{0}$ & 8.05e+06 & 2.85e+06 & 6.45e+06 & 2.23e+06 \\ \colhline
+	\dword{cc}\,$\nu_\mu+$\,2\,$\pi$ & 1.05e+07 & 2.59e+06 & 6.86e+06 & 1.77e+06 \\ \colhline
+	\dword{cc}\,$\nu_\mu+$\,3\,$\pi$ & 4.62e+06 & 7.2e+05 & 1.73e+06 & 3.78e+05 \\ \colhline
+	\dword{cc}\,$\nu_\mu+$ other & 9.22e+06 & 7.44e+05 & 1.46e+06 & 3.09e+05 \\ \colhline
+	\dword{cc} $\nu_{\mathrm{e}}+\bar{\nu_{\mathrm{e}}}$ & 1.43e+06 & 6.56e+05 & 4.47e+05 & 3.34e+05 \\ \colhline
+	$\nu+\mathrm{e}^{-}$ & 8.39e+03 & 7.16e+03 & 5.31e+03 & 4.24e+03 \\ 
+\end{dunetable}
+
+\begin{dunetable}
+	[Event rate table RHC]
+	{ccccc}
+	{tab:RHC_rates}
+	{\dword{rhc} Event rates in ArgonCube. Accepted is defined a the $\mu$ is either contained or matched to the \dword{mpd}, and the hadronic shower is contained (\textless\SI{30}{\mega\electronvolt} in the outermost \SI{30}{\centi\metre} of the LAr)}
+	\dword{rhc} mode & total & accepted & \SIrange{0.5}{4.0}{\giga\electronvolt} & accepted \\ \toprowrule
+	\dword{cc}\,$\bar{\nu_\mu}$ & 2.63e+07 & 1.23e+07 & 2.01e+07 & 9.67e+06 \\ \colhline
+	\dword{cc}\,$\nu_\mu$ & 1.36e+07 & 3.51e+06 & 3.13e+06 & 1.28e+06 \\ \colhline
+	\dword{nc} total & 1.53e+07 & 9.33e+06 & 9.31e+06 & 7.21e+06 \\ \colhline
+	\dword{cc}\,$\bar{\nu_\mu}+$\,0\,$\pi$ & 1.17e+07 & 6.67e+06 & 1.01e+07 & 5.6e+06 \\ \colhline
+	\dword{cc}\,$\bar{\nu_\mu}+$\,1\,$\pi^{\pm}$ & 7.56e+06 & 3.5e+06 & 6.01e+06 & 2.73e+06 \\ \colhline
+	\dword{cc}\,$\bar{\nu_\mu}+$\,1\,$\pi^{0}$ & 2.39e+06 & 9.61e+05 & 1.86e+06 & 7.19e+05 \\ \colhline
+	\dword{cc}\,$\bar{\nu_\mu}+$\,2\,$\pi$ & 2.62e+06 & 8.14e+05 & 1.63e+06 & 4.99e+05 \\ \colhline
+	\dword{cc}\,$\bar{\nu_\mu}+$\,3\,$\pi$ & 8.3e+05 & 1.75e+05 & 3.02e+05 & 7.53e+04 \\ \colhline
+	\dword{cc}\,$\bar{\nu_\mu}+$ other & 1.16e+06 & 1.4e+05 & 1.96e+05 & 4.29e+04 \\ \colhline
+	\dword{cc}\,$\nu_{\mathrm{e}}+\bar{\nu_{\mathrm{e}}}$ & 9.25e+05 & 4.01e+05 & 1.95e+05 & 1.5e+05 \\ \colhline
+	$\nu+\mathrm{e}^{-}$ & 6.44e+03 & 5.75e+03 & 3.98e+03 & 3.42e+03\\
+\end{dunetable}
+
+\subsubsection{Neutrino pile-up mitigation}
+
+The DUNE Near Detector complex requires a LArTPC design that is resilient to beam neutrino pileup, as mis-assignment of final state particles can result in mis-classification of neutrino interaction type and/or a bias in reconstructed neutrino energy. For a typical 10~$\mu$s-wide LBNF beam spill at 1.2~MW beam power, a mean of 55 neutrino interactions --- including targets both internal (57\%) and external (43\%) to the LArTPC --- produce ionization and scintillation signals within the 105~m$^3$ active volume. Optically segmenting the detector volume into 70 drift regions results in a mean of 5 scintillation signals per segment per spill. Assuming a scintillation time resolution of 25~ns, the rate of optical signal pile-up is 3\% per module per spill, relative to 30\% for a monolithic detector of equal size. With modest resolutions for both scintillation signal amplitude and position within the module, the corresponding ionization signals in each module can be accurately time-tagged and thereby associated to the correct neutrino interaction. The modular design maintains this capability after the LBNF beam power is upgraded to 2.4~MW.
+
+The ND-LAr detector design entails a $7\times5$ modular array. Each module is 3~m high, 1~m long, 1~m wide and comprised of two TPC drift regions separated by a central cathode plane, each with maximum drift length of 50~cm. Each drift region is optically isolated and independently instrumented for scintillation light detection. This ND-LAr modular design is compared to a far detector-like LArTPC with a central cathode and two drift regions to assess the benefit of modularity relative to a "monolithic" LArTPC design. The same instrumented (active) LAr volume and bounding dimensions (5~m $\times$ 7~m $\times$ 3 m) is assumed between modular and monolithic schemes for direct comparisons. The simulation sample used in this study was constructed with LBNF-like neutrino fluxes input into a GENIE neutrino interaction model. The LBNF beam spill microstructure entails six batches each comprised of 84 53.1 MHz bunches. One thousand LBNF-like beam spills were simulated at 1.2 MW beam power and propagated through the ND hall detector geometry including the surrounding rock using a Geant4 simulation. Deposited energy was calculated by the summation of visible energy depositions in the ND-LAr active volume.
+
+Assuming a 1 MeV threshold for a single visible interaction per TPC, modularity alone reduces the ambiguity in single neutrino interaction selection by a factor of $\approx7$. This 1~MeV visible interaction threshold per TPC has sub-percent level bias on visible energy for neutrino interactions with neutrino vertex residing within the charge instrumented volume and visible energy ex- ceeding 500 MeV.
+With roughly 55 independent neutrino interactions producing visible signals per 10~$\mu$s spill, the chance of two interactions being close in time is relatively frequent. The ND-LAr technical requirements call for scintillation light timing resolution of 20 ns. This specification assumes late scintillation light can be effectively subtracted from the prompt component. Scintillation light pileup is mitigated with modularity. Even at a relatively modest timing resolution of 200~ns, a factor of 4 improvement in individual interaction light identification is gained with the described modularity. At 25~ns timing resolution, 3\% of neutrino interactions within a TPC are within 25~ns of each other with the current modular TPC scheme, whereas 30\% of neutrino interactions are within 25~ns of each other with a monolithic TPC scheme. These results are shown in Figure \ref{fig:ndlar-ana-pileup}.
+
+Note that this comparison does not take into account interactions outside the charge instrumented volume. The monolithic TPC scheme would have sensitivity to light signals from these interactions, as opposed to the modular scheme which would not owing to the light-tight modules. Thus, charge-light signal combinatorics are further complicated in the monolithic TPC design, resulting in an underdetermined linear system.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.5\textwidth]{pileup_ambiguous_nu.pdf}
+\caption{Assuming removal of late scintillation light from the prompt component, the ``ambiguous $\nu$ fraction'' reflects the fraction of neutrino interactions per TPC drift region that cannot be resolved for a given timing resolution.}
+\label{fig:ndlar-ana-pileup}
+\end{figure}
+
+{\it Figure: Signal hit clustering efficiency/purity after pileup rejection.}
+
+\subsubsection{Detector acceptance}
+
+Detector acceptance with $\mu$ and hadronic containment requirements. Per CDR, with additional details on $\mu$ and clustering efficiency from ML reco folded in.
+
+{\it Figure: Detector acceptance vs. neutrino interaction kinematics: muon reconstruction.}
+{\it Figure: Detector acceptance vs. neutrino interaction kinematics: hadronic containment.}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.49\textwidth]{graphics/eff_q0q3_Ev_1000_2000.pdf}
+\includegraphics[width=0.49\textwidth]{graphics/eff_q0q3_Ev_3500_4000.pdf}
+\caption{Neutrino acceptance as a function of energy and momentum transfer}
+{Neutrino acceptance shown as a function of energy transfer and momentum transfer ($q_0$ and $q_3$) to the target nucleus. The units for $q_0$ and $q_3$ are \SI{}{\giga\electronvolt} and \SI{}{\giga\electronvolt}/c, respectively.}
+\label{fig:q0q3acc}
+\end{figure}
+
+\subsubsection{Event reconstruction performance}
+
+Note: Text pending discussion with Jeremy \& Kazu for what is achievable on the PDR timescale.
+
+\begin{itemize}
+    \item Energy reconstruction
+    \item Flavor/sign accuracy
+    \item Exclusive selection accuracy (muon ID efficiency, pi+ ID, pi0 ID, nu+e)
+\end{itemize}
+
+{\it Figure: Reconstructed vs. true neutrino energy for $\nu_\mu$CC.}
+{\it Table: Particle ID performance for ML reco}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{System Design}
 \label{sec:lartpc-des}
+{\it Jonathan, 1-2 pages}
 
-%%%%%%%%%%%%%%%
-\subsection{Modularity}
-\label{sec:lartpc-des-struc}
-\fixme{Highlight this as its unique feature}
+\begin{itemize}
+    \item 1 m by 1 m by 3 m tall TPC Module is the basic unit of ND LArTPC
+    \item Each TPC module consists of a fully-functioning TPC with central cathode and two horizontal drift regions
+    \item Pixelated charge readout tiles cover two anodes
+    \item Light traps (two styles) cover vertical field cage walls, funnel light to SiPMs located near anode.
+    \item Top and bottom of TPC module field cage is perforated, side walls are sealed.  Purified LAr is injected at top of module (below weir), exits module at bottom into cryostat bath.
+\end{itemize}
+
+{\it Figure: Exploded CAD view of TPC module, with subsystem labels}
 
 %%%%%%%%%%%%%%% One subsection for each WBS element:
-\subsection{WBS element 1}
-\label{sec:lartpc-des-wbs1}
+\subsection{Field Structures}
+\label{sec:lartpc-des-fieldstruc}
+{\it Francois, 3 pages}
 
-%%%%%%%%%%%%%%% Maybe not needed?
-\subsection{Infrastructure and Tooling}
-\label{sec:lartpc-des-infr}
+\begin{itemize}
+    \item Intro 
+    \begin{itemize}
+        \item Purpose of subsystem
+        \item Key elements of subsystem
+        \item Major requirements that drive subsystem design
+    \end{itemize}
+    \item Subsystem details
+    \begin{itemize}
+        \item Component descriptions, counts per module/detector
+        \item Figure: CAD of subsystem elements
+        \item Subsystem interfaces (mechanical, electrical)
+        \item Component specifications
+        \item Component production process
+        \item Prototyping results / spec validation
+    \end{itemize}
+\end{itemize}
 
-%%%%%%%%%%%%%%% Maybe falls under WBS elements?
-\subsection{Auxiliary Pieces and Instrumentation}
-\label{sec:lartpc-des-aux}
+The field-shaping structure in a DUNE ND-LAr TPC module is used to define a uniform electrostatic field in the liquid argon volume in order to transport ionization electrons -- from their point of creation to the readout pixels on the anode -- without significant distortions. It must achieve a field non-uniformity $<1\,\%$ in the entirety of the active volume and operate reliably under nominal fields of $250\,$V$/$cm and peak fields of up to $500\,$V$/$cm. The footprint of the system has to be minimized in order to optimize the fraction of active volume in the detector as a whole. Additionally, this subsystem should not exceed a local heat density of $100\,$ mW/cm$^2$, which is the typical heat density of electronics used in wire-based LArTPCs~\cite{notsure} and limits liquid argon boiloff.
+
+Figure\,\ref{fig:field_shell} shows schematics of the field-shaping structure as a whole. It is composed of five copper-clad, 6\,mm-thick FR4 panels covered with Dupont Kapton sheets loaded with electroconductive carbon black. The central panel in the figure is the cathode -- which splits the TPC module into two optically-isolated drift volumes and sets the maximum potential -- while the other four form the `field shell': a resistive structure which continuously decreases the voltage from the cathode to the grounded anode. The bottom and top panels of the field shell are perforated with $\sim350$ 4\,mm holes to facilitate liquid argon circulation. This approach to field-shaping has several advantages over a traditional TPC field cage:
+\begin{itemize}
+  \item it extends the achievable active volume by having a smaller the footprint but also by reducing local field non-uniformity created by field-shaping rings;
+  \item the resistive heating is spread over entire panels instead of being localized on the surface of resistors, which drastically stifles liquid argon nucleation;
+  \item it does not suffer from single points of failure, as the whole panel drives the resistance;
+  \item the field does not spike around rings, considerably reducing the risk of arcing.
+\end{itemize}
+The field-shaping structure also provides mechanical support for the entire TPC module.
+
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[b]{.4\textwidth}
+\includegraphics[width=\linewidth]{graphics/fc2.PNG}
+\end{minipage}
+\qquad
+\begin{minipage}[b]{.4\textwidth}
+\includegraphics[width=\linewidth]{graphics/cathodeandhv.PNG}
+\includegraphics[width=\linewidth]{graphics/fcbottomtop.PNG}
+\end{minipage}
+\caption{(Left) Exploded-view drawing of the field-shaping structure of a TPC module. (Top right) High-voltage socket at the top of the cathode. (Bottom right) Bottom field-shell panel.}
+\label{fig:field_shell}
+\end{figure}
+
+The cathode panel is covered on both sides with a layer of 25\,$\mu$m-thick Kapton XC, a material which provides a $\mathcal{O}(1)\,$M$\Omega/\Box$ sheet resistance, identical to the one used in the protoDUNE-SP cathode~\cite{protodune-sp_tdr}. The use of a resistive material prevents damage to the TPC, including the electronics, in the event of a discharge. The conductivity of the cathode is selected to be sufficient to neutralize the positive argon ions at the same rate as they are collected by the cathode. The high voltage is fed to the cathode plate through a socket placed at the top of the panel. The high voltage is distributed to the field shell through a perimeter of copper cladding connected to the center copper strip of the four remaining panels by metalized G10 corner brackets bolted on with PEEK screws.
+
+The field shell panels are covered with 100\,$\mu$m-thick sheets of Kapton DR8, a variant of Kapton XC which exhibits a higher $\mathcal{O}(1)\,$G$\Omega/\Box$ sheet resistance at room temperature and under low voltage loads. This material is a suitable basis to replace traditional field cages as it provides sufficient bulk resistance to constrain the heat load and limit the necessary power supply power. Kapton DR8 was extensively studied on $15\times15$\,cm$^2$ panels; figure~\ref{fig:dr8_studies} shows the apparatus used to conduct the tests and the sheet resistance of this material as a function of temperature and electric field, for various samples. These results show that at a peak electric field of 500V/cm and at liquid argon temperature, the sheet resistance of DR8 is $\sim3\,$G$\Omega/\Box$. Accounting for a shell aspect ratio of $L/W=1/16$ on either side of the cathode, the bulk resistance of a module is $R\simeq100$\,M$\Omega$. For a cathode voltage of $V=25$\,kV, this corresponds to a total heat load $V^2/R<10$\,W spread over the entire shell, or a local heat density of $<100\mu$W/cm$^2$, well below the maximum value.
+
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[b]{.295\textwidth}
+\includegraphics[width=\linewidth]{graphics/ir2_2.jpeg}
+\vspace{2mm}
+\end{minipage}
+\qquad
+\begin{minipage}[b]{.4\textwidth}
+\includegraphics[width=\linewidth]{graphics/ir2_temp_scan.pdf}
+\includegraphics[width=\linewidth]{graphics/ir2_efield.pdf}
+\end{minipage}
+\caption{(Left) Kapton DR8 test apparatus in a small-scale liquid-argon cryostat. (Right) Sheet resistance of DR8 at 125\,V/cm, as a function of temperature (top) and in liquid argon, as a function of electric field strength (bottom). Both graphs agree with the hopping transport model~\cite{hopping_transport}.}
+\label{fig:dr8_studies}
+\end{figure}
+
+For the construction of a $2/3$-scale DUNE-ND prototype module, a method to laminate the conductive Kapton onto the copper-clad FR4 panels was demonstrated. It employed a purpose-built lamination device or `laminator' (left of figure~\ref{fig:field_shell_laminations}), and followed these steps:
+\begin{enumerate}
+    \item etch copper-clad FR4 panels to leave only a 1.25\,cm-thick bands of copper: around the perimeter for the cathode and in three separate strips for the field shell panels (one in the center to mate with the cathode and two on the sides to to connect to the anodes);
+    \item laminate a sheet of protective plastic on the back of the panel, plug the the screw holes with rubber and mask part of the copper bands with tape to prevent epoxy from getting on them;
+    \item tape Kapton sheets in the desired pattern onto the laminator table, laminate them with protective film, lift the film off the table;
+    \item apply $250$\,g/m$^2$ of Master Bond EP29LPSP epoxy, roll two parallel DR8 sheets on either side of the central copper band, ensure $>5\,$mm overlap with each band;
+    \item cover the laminate with bleeder cloth, vacuum bag the assembly, cure for seven days at room temperature, including two days under vacuum.
+\end{enumerate}
+A cathode and a side panel produced using this method are pictured in the center and on the right of figure~\ref{fig:field_shell_laminations}, respectively. Proper electrical contact of the Kapton XC to the perimeter of the cathode is tested by measuring the current from a surface probe to the perimeter. Similarly, contact between the Kapton DR8 and the copper bands is assessed by measuring the current flowing from the center copper strip to either side strips. In the prototype, current was measured in all field-shaping panels and will be further tested in a data acquisition run.
+
+\begin{figure}[htbp]
+\centering
+
+\includegraphics[width=.3\linewidth]{graphics/laminator.jpg}
+\qquad
+\includegraphics[width=.25\linewidth]{graphics/cathode_picture.jpg}
+\qquad
+\includegraphics[width=.25\linewidth]{graphics/side_panel_picture.jpg}
+\caption{(Left) Lamination device used to adhere Kapton onto FR4 panels. (Center) $2/3$-scale DUNE ND-LAr TPC cathode and (Right) field-shell side panel.}
+\label{fig:field_shell_laminations}
+\end{figure}
+
+
+\subsection{Charge Readout}
+\label{sec:lartpc-des-chargero}
+{\it Brooke, 5 pages}
+
+\begin{itemize}
+    \item Intro 
+    \begin{itemize}
+        \item Purpose of subsystem
+        \item Key elements of subsystem
+        \item Major requirements that drive subsystem design
+    \end{itemize}
+    \item Subsystem details
+    \begin{itemize}
+        \item Component descriptions, counts per module/detector
+        \item Figure: CAD of subsystem elements
+        \item Subsystem interfaces (mechanical, electrical)
+        \item Component specifications
+        \item Component production process
+        \item Prototyping results / spec validation
+    \end{itemize}
+\end{itemize}
+
+
+\subsection{Light Readout}
+\label{sec:lartpc-des-lightro}
+{\it Nikolay, or Sasha, 5 pages}
+
+\begin{itemize}
+    \item Intro 
+    \begin{itemize}
+        \item Purpose of subsystem
+        \item Key elements of subsystem
+        \item Major requirements that drive subsystem design
+    \end{itemize}
+    \item Subsystem details
+    \begin{itemize}
+        \item Component descriptions, counts per module/detector
+        \item Figure: CAD of subsystem elements
+        \item Subsystem interfaces (mechanical, electrical)
+        \item Component specifications
+        \item Component production process
+        \item Prototyping results / spec validation
+    \end{itemize}
+\end{itemize}
+
+The Light Readout System (LRS) provides fast timing information from the prompt scintillation light emitted by the charged particles in LAr at $\sim$\SI{128}{\nano\metre} wavelengths along with ionization. The optical detection of scintillation photons provides both an absolute reference (t0) and rejection of unassociated charge signals (pileup) from the specific neutrino signals of interest. Furthermore, the LRS serve as a new dielectric light detection technique capable of being placed inside the field-shaping structure to increase light yield and localization of light signals.
+
+The Light Readout System consist of two functionally identical, SiPM-based systems for efficient detecting single UV photons with a large surface coverage: The Light Collection Module (LCM) and the ArCLight module (ArCLight). Read out, front-end electronics, DAQ, feedthrough flanges, SiPMs power supply subsystem, and slow control are also included in the system. Cabling and interconnection between elements are also provided by the system.
+
+Each detector module (\num{35} in total) contains \num{60} LCM and \num{20} ArCLight modules with the alternating arrangement (\num{3} LCM - \num{1} ArCLight). Surface coverage is shared equally between both detectors. Each light module is read out by SiPMs which are located by pairs on a Printed Circuit Board (SiPM-PCB). One LCM is read out by a single SiPM-PCB, but one ArCLight is read out by \num{3} SiPM-PCB boards. \num{3} SiPM-PCBs are grouped together by insertion to a single E-shaped PCB - E-PCB. The E-PCB is intended to interface SiPMs signals to long micro-coaxial cable lines which are connected to the feedthrough. To gain signal power each E-PCB is equipped with \num{6} pre-amplifiers. To interface all light modules in a single TPC-module the \num{40} E-PCBs are used. Feedthrough PCB with microcoaxial cable connectors provides an interconnection between cold and warm sides of the detector module. On the warm side on top of the cryostat nearby the flange, the VME 6U crate is placed. There are 35 of such the crates that are placed on top of every TPC module. Microcoaxial cable assemblies provide connection between the feedthrough and the crate. The crate contains front-end electronics boards in VME 6U standard: SiPM power supply PCB modules based on DACs (SiPM PCB), PCB modules with variable gain amplifiers (VGA PCB), control module PCB, and Patch board which provides interface of signals that comes from feedthrough to DAC and VGA PCBs. Optionally, trigger module will be also placed in the crate to provide the trigger signal to the ADCs. All these modules are custom made. Signals from VGAs comes to the ADCs by means of twisted pair flat cables. Network switch provides optical connection between the ADCs and the DAQ computers. Rack with ADCs, optical switches, and HV source are located at some distance from the cryostat.  
+
+The basic principle for LCM and ArCLight is the same. The scintillation vacuum ultraviolet (VUV) light produced in LAr is shifted from \SI{128}{\nano\metre} to visible light by TPB, an efficient wavelength shifter, which is coated on the surface of the light collection systems. The emission spectrum of TPB is broad with a peak intensity of around \SI{425}{\nano\metre} (violet light). The violet light emitted on the surface of the light detection system eventually enters the bulk structure of the detector and is shifted to green light by the dopant (e.g. coumarin) in a bulk material which also acts as a light trap (see Fig.~\ref{fig:fig_modules}).
+The ArCLight module (Fig.~\ref{fig:fig_modules}~left) which has been developed by Bern University uses the ARAPUCA principle of light trapping. The general idea is to let the violet light go into the shifter bulk and produce a reflective coating for the green light on all sides but the photosensor window. On the TPB side a dichroic filter which is transparent for the violet light and reflective for the green is used. All other sides are coated with conventional mirror film. The green light, hence, is trapped and may be detected by Silicon Photomultipliers. The ArcLight dimensions are \SI[product-units=repeat]{300x446x10}{\milli\metre}.
+
+\begin{figure}[htbp]
+\centering 
+\includegraphics[width=0.44\linewidth]{graphics/Light/ArCLight.png}
+\qquad
+\includegraphics[width=0.5\linewidth]{graphics/Light/lcm.jpeg}
+\caption{\label{fig:fig_modules} Two approaches to light detection: Left – ArCLight, Right – LCM.}
+\end{figure}
+
+
+The Light Collection Module prototype is a frame cantilevered by a PVC plate that holds WLS-fibers which are bent into two bundles optically coupled to two SiPM light sensors (Fig.~\ref{fig:fig_modules}~right). The Fibers are grouped and held by spacer bars with holes which are tightened to the PVC plated by means of polycarbonate screws in order to match thermal contraction of different materials. The PVC plate as well as the WLS-fibers are coated with TPB that re-emit an absorbed VUV liquid argon light (\SI{128}{\nano\metre}) to the violet ($\sim$\SI{425}{\nano\metre}) which is shifted inside multi-cladding $\varnothing$=\SI{1.2}{\milli\metre} Kuraray Y-11 fibers to the green light ($\sim$\SI{510}{\nano\metre}), then trapped by total internal reflection and guided towards the SiPMs.  The LCM dimensions are \SI[product-units=repeat]{100x446x10}{\milli\metre}.
+
+\paragraph{SiPM Readout}
+
+SiPMs\footnote{e.g. Hamamatsu S13360-6050PE} mounted on a Printed Circuit Board, are shown in Figure~\ref{fig:pcb}~right. The SiPM-PCB has \num{2} double-pin connectors to plug it onto an E-shaped readout PCB (E-PCB), shown in Figure~\ref{fig:e-pcb}~right, which can support 3 LCMs (6 SiPMs) or 1 ArCLight module (6 SiPMs). To gain signal from the SiPM a LMH6624 preamplifier from Texas instruments is used. The E-PCB contains 6 preamplifiers to provide signal transition through the long coaxial signal line. Each preamplifier dissipates around \SIrange{60}{80}{\milli\watt} in a range of \SI{1}{\volt} and a bandwidth of \SI{30}{\mega\hertz} ($\sim$\SI{10}{\nano\second} rise time). Such an energy dissipation leads to LAr bubbling and requires E-PCB displacement outside the active volume behind the pixelated anode plane. Since there are two semi-TPCs in a single module, a left- and a right-handed E-PCB are used in order to provide a symmetric mechanical assembly (Fig.~\ref{fig:e-pcb}~right). 
+
+To connect the E-PCBs in a single TPC-module we use microcoaxial cable assemblies. Each cable is an assembly of \num{20} micro-coaxial cables FCF8-20-01-L-XX.XX-S type where XX.XX - is a length specified in inches. The cables are plugged into the E-PCB by means of FCS8-20-01-L-S-A-TR connector (see Fig.~\ref{fig:e-pcb}~right). On another side, (at feedthrough cryostat panel) cable is interfaced with the same FCS8-20-01-L-S-A-TR connector. Both, cables and connectors, are manufactured by the Samtec company. 
+
+
+
+\begin{figure}[htbp]
+\centering 
+\includegraphics[width=0.47\linewidth]{graphics/Light/SiPM_PCBdrawing.pdf}
+\qquad
+\includegraphics[width=0.47\linewidth]{graphics/Light/SiPMpcb.png}
+\caption{\label{fig:pcb} The SiPM-PCB drawing and general view. Numbers are given in units of mm.}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering 
+\includegraphics[width=0.47\linewidth]{graphics/Light/Epcb_drawing.pdf}
+\qquad
+\includegraphics[width=0.47\linewidth]{graphics/Light/epcb-2.pdf}
+\caption{\label{fig:e-pcb} The E-PCB drawing and the left- and right-handed E-PCBs (right). Numbers are given in units of mm.}
+\end{figure}
+
+\paragraph{SiPM Power Supply}
+
+For biasing the SiPM by the reverse voltage a power supply module based on the HV DAC AD5535 by Analog Devices is going to be used. The module is a PCB in the VME 6U standard that contains 4 of the HV DACs chips. Such the module allows for biasing of 128 SiPMs channels. The light system in the single ND TPC has 240 SiPM photosensors and, therefore, they are supplied by 2 HV DAC PCBs. This DAC PCB provides also feedback from each DAC channel using the ADC together with the voltage divider. Both DAC PCBs for the ND is placed in an individual VME 6U crate which is located on top of the TPC. Bias voltage required for SiPMs is up to 70 V. This high voltage is going to be supplied by the powerful laboratory voltage source (up to 15 A) which is enough to supply all the SiPMs of the entire light system. It is planned to place the HV laboratory source in the rack located at a distance from the ND. The rack is shared probably with ADCs or other electronics. There is another option on how to get the HV - to use the DC-DC converter mounted on the individual DAC PCB which provides the HV voltage on the PCB itself by converting LV to HV. Both options are still under consideration.
+\paragraph{Front-End}
+The microcoaxial cable line of the light system from the feedthrough comes to the Patch board placed in the VME crate on top of the TPC. This microcoaxial cable assembly is used both for the signal line from SiPMs and for the power line of SiPMs and pre-amplifiers. The Patch board is intended to split wires that come from the feedthrough and spread them to the DAC PCBs and VGA PCBs. VGA PCB has 24 channels of programmable amplifiers allowing for adjusting the signals from SiPMs to the input dynamic range of the ADC while calibration of the SiPMs (low intensities/low amplitudes) and muon detection (high intensities/high amplitudes). 240 SiPM channels of the ND require 10 of the VGA PCBs that are placed in the VME 6U crate (21 slots). This crate is shared also with DAC PCBs, Patch board, trigger module, and Control module. 
+
+
+\subsection{Calibration}
+\label{sec:lartpc-des-calib}
+{\it Kendall/Jelena. 3 pages}
+
+\begin{itemize}
+    \item Intro 
+The DUNE Near Detector overarching requirements and overall physics goals cannot be achieved without thorough understanding and characterization of the Near Detector LAr TPC. The ND LAr TPC’s performance in terms of energy and vertex resolution, momentum and angular track resolution, particle identification and reconstruction, must at the minimum match the performance of the DUNE Far Detector. Contrary to DUNE Far Detector, DUNE Near Detector will collect an enormous statistics and its measurements of the neutrino flux, extrapolation of its measurements to FD, and measurements of neutrino cross-sections will be dominated by its systematic error budget. It is imperative that the overall systematic error of the ND measurements and their extrapolation to FD, are subdominant in the overall DUNE error budget and do not negatively influence it. Calibration of the Near Detector is at the heart of reaching  this goal. The calibration program must provide measurements and verify detector performance at a few percent or better level, with sufficient spatial granularity, with respect to detector movements and over the lifetime of the detector. 
+
+The Near Detector calibration program will rely on both dedicated systems and natural sources to perform calibration. Natural calibration sources include cosmic rays, rock muons and argon isotopes such as $^{39}Ar$. Given the stringent requirements for the overall ND-induced systematic error that requires finely grained spatial calibration, rock muons and other natural sources lack the quality required to meet the ND calibration goals. Thus, dedicated calibration hardware systems are required.  Calibration hardware systems under consideration include photoelectron (PE) laser system and embedded radioactive sources (beta emitters). These systems measure the detector response model parameters and verify the validity of the detector response model. Employment of different techniques will provide constraints on detector associated systematic errors, including detector cross-calibration between different TPC modules, detection efficiency uncertainty, linearity of the response, and stability of the response through detector movements and over time.
+
+    \begin{itemize}
+        \item Purpose of the PE Laser System
+        Well localized electron sources represent excellent calibration tools for the study of electron transport in the LArTPC. A photoelectron laser system can provide such sources at predetermined locations on the cathode, leading to precise measurements of:
+        
+        \begin{itemize}
+        \item
+    the total drift time and charge drift velocity at predetermined locations on the cathode
+    \item
+    space charge effects at various positions in the detector
+    \item
+    position reconstruction close to cathode
+    \item
+    Measurement of diffusion effects for charges traveling the full  drift                 ,
+    \item
+    Charge collection efficiency
+    \item
+    Charge trigger threshold
+    \end{itemize}
+
+        \item Key elements of PE Laser
+        In order to produce localized clouds of electrons using a photoelectric effect, small metal discs will be placed on the cathode and used as photoelectric targets. Photoelectric targets are illuminated by diffused 266 nm wavelength light  generated by the Nd:YAG laser quadrupled wavelength to produce localized electron clouds. Laser light pulses are injected into UV optical fiber bundles outside the cryostat, brought in through the flange and then distributed to each TPCs module via cryogenic UV optical fibers. Fig. \ref{fig:PElaser_overview} illustrates the light injection scheme.
+\begin{figure}[htbp]
+\centering 
+\includegraphics[width=0.47\linewidth]{graphics/Calibration/PElaserOverview.png}
+\caption{\label{fig:PElaser_overview} The An overview of the PE laser calibration system. NdYag laser light injected into optical fibers is guided to each TPC module for calibration.}
+\end{figure}
+        \item Major requirements that drive PE Laser design
+        
+        PE laser design is driven by the need for the precise calibration of particle energy and position inside the TPC, need to cross-calibrate detector response among all modules, as a function of time and especially after the PRISM related movements of the ND LAr cryostat. Specifically, these include precision measurement of the E field strength in the direction of the drift and transverse to it, with high granularity and over time.  Consequently, the system must accommodate low level calibration such as cathode plane tilt, electron lifetime, electron diffusion and linearity of charge collection efficiency.
+
+    \end{itemize}
+    \item PE laser calibration  details
+   
+    Photoelectric laser system consists of the following parts: 266 nm ND:Yag laser, optical fibers, optical diffuser at the end of the fiber tips in the modules and photoelectric targets on the cathode wall of the TPC module. Targets will be mounted on both sides of the cathode to calibrate both fiducial volumes in each module.  The baseline material choice for the metal targets is aluminum, while silver is being considered as an alternative. At 266 nm (Nd:YAG quadrupled wavelength) the single photon energy of 4.66 eV is sufficient to generate photoelectrons from aluminum and silver, since the work function of aluminum is 4.06 eV and 4.26-4.73 (lattice dependent) for silver. However, aluminum and silver are prone to oxidation. In the case of aluminum, a thick layer of aluminum oxide forms on the surface, but this does not increase the work function of the material. The main factor driving the electron yield from the photoelectric targets is the quantum efficiency of the material. Although electrons will be released from the metal whenever photons hit the metal surface, most of the ejected electrons carry forward momentum and therefore are never released from the metal. Only a small fraction of released electrons back-scatters or knocks another electron out of the surface. The quantum efficiency for various metals is typically between 10-5 and 10-6 , thus quite low. All material candidates will be studied in the lab to verify the electron yield, and tested in the prototype module in order to verify the quantum efficiency for different materials.
+
+
+
+    \begin{itemize}
+        \item Component descriptions, counts per module/detector
+        
+        Opposite from the laser and fibers that will be procured through the vedor, PE targets will be custom designed to meet ND LAr Calibration requirements.
+        
+        Disc targets will be fabricated with two different diameters: 2.5 mm and 5 mm to provide a test of the vertex reconstruction precision. In addition to circular targets, metal strips 0.5 × 20 cm are being considered to calibrate the rate of transverse diffusion in LAr. However, their impact on the cathode field will be carefully studied before being incorporated into the target list, to prevent any disruptions to the cathode electric field. The targets will be fastened to cathode by a type of cryogenic, adhesive film. Ideally, circular targets will be distributed along the edges, every 10 cm where distortions to the E field and TPC shape exhibit largest fluctuations. In the interior of the cathode, circular targets should be placed every 20 cm. In addition, slanted target strips will be fastened to the cathode. Strips should be placed evenly roughly every 40 cm in two rows for a total of 14 strips per one cathode side.  Fig.~\ref{fig:target_layout} Illustrates distribution of circular and strip targets on the cathode. The cathode will have targets on both sides in order to calibrate both volumes of each TPC module. 
+        
+\begin{figure}[htbp]
+\centering 
+\includegraphics[width=0.47\linewidth]{graphics/Calibration/PhototargetsCathode.png}
+\caption{\label{fig:target_layout} PE target layout on the cathode surface.}
+\end{figure}
+
+ The laser beams used to illuminate the targets will be injected into the cryostat via cryogenic optical fibers guided inside each TCP module. The mounting points will be in the corners where the field cage and anode meet in order to illuminate the cathode across drift volume. There will be a minimum of 3 injection fibers illuminating each side of the cathode for a total of  6 fibers per module and 210 fibers per ND LAr. Fiber tips  will be coupled with defocusing elements that will illuminate 1x1 m2  area surface on the cathode with a single fiber. 
+While the current plan aims for illumination of the entire cathode, the Kapton material that composes the resistive panels undergoes photoelectric effect, albeit with three orders of magnitude lower quantum efficiency at cryogenic temperatures when compared to phototargets at 266 nm. The noise produced is expected to be tolerable, but in case the noise is higher than anticipated, the solution is to illuminate only the areas where phototargets are placed, reducing the resistive panel exposure. In this case, instead of defocusing elements, bare fibers will be utilized. The bare fiber opening angle is 10° with a narrower exposure. Lasers typically operate at 10 Hz frequency. If 10000 pulses per laser are assumed, about 15 minutes of running is needed per laser for a single calibration run as the photoelectron clouds from different dots are very well localized. With the help of commercial multiplexers, 1 hour would be sufficient for a single calibration campaign. If the DAQ or lasers themselves prevent parallel running, the entire calibration campaign will take between 15 minutes or up to 1-5 hours. The calibration run duration will depend on the final calibration scheme. The photoelectron system will use the same NdYAG laser quadrupled pulse lasers used for argon ionization. Stability of the laser pulses will be monitored with a power meter. Dielectric mirrors reflective to 266 nm light will guide the laser light to injection points, but a fraction of the light will be transmitted instead of reflected to the power meter behind the mirror. The laser will also send an external trigger signal to the DAQ based on the photodiode that will combine the information with time stamps coming from self triggering of the pixels,  on the fraction of the light passing through the dielectric mirror.
+
+        \item Figure: CAD of subsystem elements
+        \item PE  interfaces (mechanical, electrical)
+        PE laser calibration system interfaces with various systems. In order to guide optical fibers inside the cryostat, the PE laser system interfaces with a cryostat, and each module. 
+        Since PE targets are placed on the cathode there is an interface with the cathode plane. 
+        
+        There is also interface with the DAQ as it needs to accommodate calibration data obtained by the PE laser.
+        \item Component specifications
+        \item Component production process
+        \item Prototyping results / spec validation
+    \end{itemize}
+\end{itemize}
+
+\subsection{Module Structures}
+\label{sec:lartpc-des-modstruc}
+{\it James, 3 pages}
+%%%%%%% dump from request, this is way out of format, but hopefully there is something useful I can build on.
+Subproject A: Module structure and integration facility
+\subsubsection{Overview}
+
+The module structure is the connection between the TPCs and the cryostat. It provides the feedthroughs and routing of all infrastructure to and from the detector including: HV, argon (gas and liquid), readout signals, instrumentation (temperature and level). Thus, the module structure provided the interface requirements for the design of LBNF near site cryogenic infrastructure, as well as all other detector subcomponents.
+
+Fig. 13: Illustration of the module structure above the TPC
+As it is important to minimize material near the active volume, the module structure is used to provide structural integrity to the TPCs, allowing the the TPCs to be constructed form as little material as possible. This maximises the detectors active mass by moving structural components away from the active volume.
+The module structure must locate each TPCs to a high precision with respect to its neighbouring TPCs. This is important when installing module rows into the cryostat. It is also vital for maintaining the required clearances and orientations during the cool down and operation in liquid argon, in order to minimize any uncertainties when reconstructing events across multiple modules.
+The structure is itself modular by design in order to allow individual modules to be tested prior to their integration into a row of 5 modules. This is required for module transportation and handling as the TPC is not a sufficiently  rigid body to support itself without the structure above it. This also reduces the requirements on local test facilities, as a single 3 x 1 x 1 m3 module is significantly easier to handle and than a full row of five. This allows for commercially available cryostats to be used for testing individual modules prior to their integration.
+
+\subsubsection{Status of module structure}
+The module structure is in the initial design phase, key components have been identified and are being optimized based on the availability of standard industrial components and engineering analysis of all custom components. 
+The design builds upon what was developed for the 2x2 demonstrator. 
+
+Structural components: Considering a row of five modules, the cryostat lid above the row is  a section of membrane cryostat  5.7 m long, 1 m wide and 0.8 m deep. I-beams forming the external structure of the cryostat are mounted to the upper edge of this section. Eight titanium support ties pass through the membrane and tie the I-beams to a 25 mm thick steel plate that spans the area below the membrane. This steel plate provides the fixing point for the modules to be mounted to.  Above each module is a square steel frame that is attached to the TPC to provide structural rigidity to the module, this frame is precisely located on and then bolted to the fixing plate below the membrane. These frames are also used to support individual modules during testing and installation. The eight titanium ties, steel fixing plate, and five steel frames form the structural components. 
+
+Fig. 14: Structural components above the modules: eight titanium ties connecting a steel fixing plate to the external I-beam structure.
+
+Feedthroughs: There are feedthroughs above each module providing the HV, signal paths and instrumentation line. Five were chosen to simplify routing in the volume above the modules. Each feedthrough is a single penetration of the membrane 260 mm in diameter, with a cross conflat connection sealing the warm side. The HV feedthrough is located within the centre of this feedthrough, with the warm connection on the top of the cross, it is isolated from other services inside the penetration by a grounded 40 mm steel tube, this is an extension of the 2x2 design. Charge and light readout cabling is routed through separate 60 mm steel tubes inside the membrane penetration. In the warm, the frontend electronics of both light and charge are mounted directly to either side of a cross conflat connection. Service routing (temperature and level sensors) will use the same principle, with a 40 mm steel tube isolating it through the penetration. In the cold, the HV cable passes through an opening in the frame and connects directly to the centre of the cathode, all other cabling connects to junction boxes mounted on the frame that connect all sub components. This allows everything below the frame to be tested in isolation from the row.
+
+Fig. 14: Feed through above each module, conflat cross is not shown to highlight internal piping.
+
+Cryogenic supply: The argon supply to modules serves two purposes: during cool down and filling it is used to inject cold argon gas and then liquid to reduce thermal the gradient across the modules as they are filled with liquid from the base, during operation clean and subcooled liquid is supplied to the top of the modules where it purifies the TPC volume and provides cooling to the electronics. There is a single argon inlet at the end of each row, from the inlet the argon is routed through vacuum jacketed lines in the ullage volume above the modules to the injection points. The liquid supply is throttled at each injection point to ensure the same volume of argon is supplied to all modules in a row. The liquid supply to the rows uses symmetric lines to negate the need for a throttling system outside the cryostat. The injection points terminate at diffusers mounted just below the nominal liquid level, this is also taken from the 2x2 design. The liquid level is 380 mm below the membrane, in accordance with industrial standards EN-14620.  During cooldown it is vital that all gas volumes are ventable to prevent contamination of the argon during operation, therefore all five feedthroughs are fitted with a gas bleed port that returns gas to the condenser and filtration system.
+
+Fig. 14: The liquid argon supply to the array of modules in the near detector.
+Test facility: The facility in Bern is large enough to house a dedicated single near detector module test stand, appropriate infrastructure such as: overhead crane, LN2 supply, LAr supply, low noise power supply, are already in place, with many items carrying over from the 2x2 efforts. However, a significant amount of infrastructure is being shipped to fermilab with the 2x2. For DUNE’s european module test site to be completed in Bern, a new cryostat is needed, a new liquid argon filtration system, a new recirculation pump and a new PLC system.  The new cryostat would be standard cylindrical vacuum-insulated vessel 4 m tall and 1.6 m across, capable of holding 11.2 t of LAr, comparable in mass to the 2x2. The setup would be the same design used for testing single modules of the 2x2, see Fig 15.
+ 
+
+Fig. 15: The liquid argon test facility in Bern, and a cross section of the single modules test cryostat.
+
+\subsubsection{Planned activities}
+The design of the module structure is developing, this design must clear a preliminary review in April 2021. Following the review, the first full-scale demonstrator module construction will begin in May 2021. The demonstrator construction is due to be completed by August 2021 with operation through to the end of October 2021. After this validation, the design must be developed for final review in March of 2022. The design must be finalized  based on the results of this review, and a second full-scale module demonstrator is to be built in January of 2023 to inform the production process of the 40 modules needed for the near detector. Construction of the ND modules is scheduled to start in early 2024, therefore procurement of components must begin in 2023.
+
+The initial design was produced after outlining the interface requirements with the LBNF ND cryogenic group and the detector sub components. The immediate task is to validate the basic design through analysis. Analysis is due to start in November 2020. Once validated, an engineering specification document must be produced with a bill of materials broken down into commercially available items, components that can be produced in-house, and components that must be produced by industrial partners.  The design will be iterated upon for final analysis in February 2021. In March 2021 the design will face a preliminary review. The design will be updated in response to the review throughout April 2021. The engineering requirements and specifications will then be released in preparation for  construction of the first full-scale demonstrator module. In parallel to the demonstrator construction, the schematics and diagram for the full detector must be produced. Quality assurance and control procedures must also be defined and documented. 
+Construction of the first full-scale ND module demonstrator will begin in May of 2021 and must be completed by August 2021. This demonstrator will consist of a full detector module and the lowermost part of the module structure: the module support frame (see Fig 16), partial LAr distribution, a reduced length HV feed through, and the junction boxes for instrumentation and readout signals.
+
+Fig. 16: An initial design of the module and support frame that will be used in the DUNE ND  module demonstrator 
+ The demonstrator will be built and operated in Bern with support from international partners. The majority of the module structure components will be produced in house, as the larger components are not required for the demonstrator. The cryostat and associated infrastructure needed to operate it must be in place by August 2021. This infrastructure includes:
+
+Module (LAr) cryostat (1.7 bara) - CryoFab - 50k USD
+Vacuum-insulated cryogenic supply lines for LAr recirculation - Demaco quote Roger
+A submersible LAr pump for recirculation - Barber Nichols - 45k USD
+LAr Flow meter - Endress and Hauser - 9k USD
+PLC system - ?? - supplier and quote from Trevor
+Larger LAr  tank?  
+Filter (LN2) cryostat (3 bara) - CryoFab - 50K USD
+Filter
+
+Findings of the demonstrator will inform the design and production procedures. The design must be prepared, industrial partners must be identified, and a production plan developed in preparation for a final review in March of 2022. With the design finalized by input of this review, a final set of documentation must be produced (engineering specifications, full-detector schematics, and QA QC procedures). Based on the engineering specifications, production and procurement of final components can begin.
+
+The final design and components will be used for a second full-scale demonstrator, with construction due to start in January 2023. Alongside this final demonstrator, procurement of the components needed for the full detector must begin. Industrial partners must produce: the vacuum-insulated LAr distribution lines for all seven rows, the 56 titanium ties to connect to the external structure, and the seven steel support plates below the membranes.
+
+The initial cost driver for module structures will be engineering time in design development and analysis, after this it is the cost of setting up the European DUNE ND test facility and the module structure components for the full-scale demonstrators. Procurement of the larger components that are needed for construction of the full near detector must begin in 2023.
+
+\subsubsection{Scientific relevance and impact of module structure}
+The module structure provides the supply of clean and cold LAr to each detector volume. Lar purity is needed to maintain electron lifetime in the TPCs, a lifetime of 3.2 ms is required to achieve 10\% uncertainty on energy reconstruction. If the lifetime differs between TPCs, the detector will not have a uniform energy reconstruction, which would introduce systematic uncertainties into all measurements(flux, cross section...), and ultimately degrade the sensitivity to the neutrino mass ordering and CP violation.
+
+If the module structure can not provide the desired rigidity to the detector volume, then the TPC structure must be overbuilt to account for this. Any increase in un-instrumented material in the TPC reduces the total active volume and therefore the fiducial mass. For individual events, this has the effect of creating larger gaps, or blindspots, in tracks and showers that traverse multiple modules. More importantly, a reduction in fisducail mass reduces statistics for measurements such as flux constraint with nue-elastic scattering, which would necessitate a longer runtime to meet the desired sensitivity. Therefore, it is vital that inactive material in the TPC is minimized, by transferring the structural integrity to the module structure above the detector volume.
+
+Any misalignment of a module with respect to a neighbouring module would result in miss reconstruction of traversing events and their energy. This could eventually be calibrated out using crossing muons produced upstream of the detector in the rock. However, it is better to negate the need for this calibration by design precision into the module location in the module structure.
+
+Although it is important to provide structural integrity to the detector components below the module structure, this must be achieved with minimal material. Neutrinos will scatter on dense material in the beam and produce tracks and showers, therefore any dense material near an active volume is a potential source of external background events. For this reason, we must minimise the material used in the structure above the TPCs.
+
+\subsubsection{Schedule and milestones of module structures}
+The design will face a preliminary review in April 2021, and final design review in March 2022 . Two full-scale module demonstrators must be built, the initial in May 2021 will inform the final design, the second in January 2023 will validate the final design. A European test facility for the ND modules must be ready to operate in time for the first demonstrator module, in August 2021. Procurement and production of components for the full near detector must begin in 2023. The schedule is as follows:
+    1. Phase 1 Preliminary Design 17-Sep-20
+    2. Phase 2 Preliminary Design 3-Nov-20
+    3. Phase 3 Preliminary Design + analysis 22-Dec-20
+    4. Phase 4 Preliminary Design + final analysis 12-Feb-21
+    5. Phase 5 Preliminary Design + drawings 31-Mar-21
+    6. Execute and respond to Preliminary Design Review 19-May-21
+    7. Fabricate v3: Full-Scale Demonstrator 20-Aug-21
+    8. Full-Scale Validation 4-Oct-21
+    9. Package and deliver to Full-Scale Demo site 18-Oct-21
+    10. Develop and Document Final Design 9-Mar-22
+    11. Execute and respond to Final Design Review 18-May-22
+    12. Evaluate and respond to results from Full-Scale Demonstrator 25-Jan-23
+    13. Fabricate v4: Production Pilot 26-Apr-23
+    14. Production Pilot Validation 8-Jun-23
+    15. Execute and respond to Production Readiness Review 18-Aug-23
+    16. Production: 0-25\% - University of Bern 1-Nov-24
+    17. QA: 0-25\% 15-Nov-24
+    18. Package and deliver 0-25\% to TPC Module Integration site - Bern 3-Dec-24
+    19. Production: 25-100 - Bern 25-Feb-25
+    20. QA: 25-100\% 25-Mar-25
+    21. Integrate Module instrumentation with Controls and Monitoring system 8-Apr-25
+    22. Package and deliver 25-100\% to TPC Module Integration site 8-Apr-25
+
+
+%%%%%%%%%%
+\begin{itemize}
+    \item Intro 
+    \begin{itemize}
+        \item Purpose of subsystem
+        \item Key elements of subsystem
+        \item Major requirements that drive subsystem design
+    \end{itemize}
+    \item Subsystem details
+    \begin{itemize}
+        \item Component descriptions, counts per module/detector
+        \item Figure: CAD of subsystem elements
+        \item Subsystem interfaces (mechanical, electrical)
+        \item Component specifications
+        \item Component production process
+        \item Prototyping results / spec validation
+    \end{itemize}
+\end{itemize}
+
+\subsection{High Voltage}
+\label{sec:lartpc-des-hv}
+{\it Igor, 3 pages}
+
+The High Voltage distributing subsystem provides delivery of the required negative potentials to cathodes of 
+each detector TPC module. The subsystem provides low-pass filters to suppress high-frequency ripple originating from the HV power supply units, operating in switching mode. The subsystem also provides cabling and interconnection between its elements, such as HV power supply units, potted filters-distributors and module cathodes. Some elements of slow control, such as voltage/current monitoring as well as temperature, are also included in the subsystem.
+
+The 35 modules of the Detector are split into 7 rows, 5 modules in each.
+Each row of 5 modules is fed with HV from a single HV power supply unit (HVPSU) via potted filter-distributor unit (PFD-5).
+The PFD-5 is connected to the HVPSU via coaxial cable, rated to withstand 100 kV. PFD-5 in turn provides 5 sockets, where the 5 coaxial cables from the 5 modules are plugged. In Figure \ref{fig:gndpath} this scheme is illustrated in a simplified way, showing only two modules connected. The cryostat and the whole HV system reside at detector ground. Current return from the cryostat to HVPS is directed via the sheath of the HV cables, which provides ground reference to the PFD-5 and further to the cryostat with detector. To ensure presence of safe ground when the HV cables are unplugged from their connectors, additional ground braid is laid out (red line in Figure \ref{fig:gndpath} denoted "copper"). This line must be arranged as close as possible to the bunch of HV cables to minimize cross-section of this inevitable ground loop.
+
+\begin{figure}[htbp]
+\centering 
+\includegraphics[width=0.9\linewidth]{graphics/HV/GNDs.png}
+\caption{\label{fig:gndpath} Electrical schematics of the HV system with ground path. Safety ground braid is highlighted in red.}
+\end{figure}
+
+
+The PFD-5 is an oil-filled high voltage low-pass filter with one input and five independent outputs (see Figure \ref{fig:pfd5cad}, left). Each output is equipped with voltage divider. Output values of them are digitized with a dedicated controller and sent out via Ethernet. In addition, the value of the oil temperature is acquired. 
+
+\begin{figure}[htbp]
+\centering 
+\includegraphics[width=0.21\linewidth]{graphics/HV/PFD5.png}
+\includegraphics[width=0.3\linewidth]{graphics/HV/PFD4-inner.png}
+\includegraphics[width=0.21\linewidth]{graphics/HV/PFD4-test.png}
+\caption{\label{fig:pfd5cad} Left: CAD drawing of the PFD-5 Potted Filter-Distributor. Electrical connection between the capacitors at the bottom is omitted for image clarity. Middle: Assembly of the prototype PFD-4 for 2x2 Demonstrator. Right: PFD-4 at the HV stand being tested at 60 kV.}
+\end{figure}
+
+
+Principal requirement to the HV subsystem is providing cathode potentials in the range up to -50 kV, which allows to set the TPC drift field to the values up to 1 kV/cm. At this voltage the current through the TPC module is expected to be 0.8 mA.
+Suppression of the HVPSU output ripple down to 10 mV would result in an equivalent induced pixel charge 0.05 fC which is below 1\% of the expected charge per pixel from the MIP track (3 fC? to check). Some suppression of the lower frequencies, such as line frequency is also an asset. 
+
+The change rate of the cathode potential is limited by the maximum allowed induced current onto pixels of the charge readout plane. The ramp rate of 100 V/s or less results in induced current below 1 pA/pix, which is a safe value.
+
+The long-term stability of the cathode potential is required to the level of 0.1\%. This allows to provide coordinate accuracy
+at better than 0.5 mm deviation at the cathode. This also restricts uncertainty on measuring ionisation charge due to recombination to below 0.01\%.
+
+The scale of size for the PFD-5 is defined by the maximum operation voltage of 50 kV. The values of filter components and the final cutoff frequency of 6 Hz is a design choice, allowing to reach best performance while remaining within the size scale.
+
+HV connectors at the flange of the PFD-5 are required for flexibility of cabling and testing the subsystem (see Figure \ref{fig:pfd5cad}, right). 
+Critical parameters of the detector health are cathode potential. Integrity of the field-shaping shell at constant cathode potential results in constant consumed current. These parameters, therefore, need to be continuously monitored by the experiment slow control system. The PFD-5 is filled with high-quality synthetic transformer oil. During operation up to 30W of thermal power is dissipated by its components into the oil. The temperature of the oil is therefore monitored as well (expected to be below 50 C for natural air cooling for nominal TPC operating parameters at 1kV/cm). 
+
+In order to monitor current through the field shall of each module a pickup circuit is mounted at the anode side of the field shell. Current pickup resistor of Rp=1k provides voltage signal with 1V/mA sensitivity, which is routed via the module top flange and digitized by a dedicated ADC unit.
+
+\begin{figure}[htbp]
+\centering 
+\includegraphics[width=0.4\linewidth]{graphics/HV/Curmon.png}
+\caption{\label{fig:hvcurmon} Electrical scheme of field shell current monitoring circuit.}
+\end{figure}
+
+The summary of the key design parameters is given in Table~\ref{tab:table-hvndlar-params}. 
+
+\begin{dunetable}
+[Parameters of the HV distribution and delivery system]
+{cc}
+{tab:table-hvndlar-params}
+{Parameters of the HV distribution and delivery system}
+Parameter & Nominal value  \\ \toprowrule
+Output channels & 35 \\ \colhline
+Output voltage & <= 50kV \\ \colhline
+Current per channel & 0.8 mA  \\ \colhline
+Output ripple voltage & < 10 mV  \\ \colhline
+Long-term stability & < 0.1\%  \\ \colhline
+Voltage ramp/down rate & 100 V/s (< 1 pA/pix)  \\ \colhline
+Voltage monitor sensitivity & 0.1 V/kV \\ \colhline
+Current pickup sensitivity & 1 V/mA \\ \colhline
+PFD-5 Surface temperature & < 50 C  \\ % no \colhline on final row
+\end{dunetable}
+
+
+Electrical schematics of the PFD-5 is shown in Figure \ref{fig:pfd5sch}. The input coaxial connector P1 brings the voltage from the HVPS (Spellman SL60*300 or equivalent) into the filter. The low-pass filter is formed by resistor R6 and capacitors C1-C6 connected in parallel. Filtered voltage is distributed via current-limiting resistors  R7-R11 over output connectors P2-P6. At each of them a resistive divider provides voltage output for the voltage monitor. Lower branch of the divider is formed by two 200k resistors in parallel,
+to prevent appearance of the HV at the monitor output in case of failure of one resistor. A K-type thermo-couple is mounted at the lower surface of the flange and immersed into the oil to provide monitoring of its temperature during operation.
+The voltages from the divider and thermo-couple leads penetrate the top flange via an oil-tight DB-9 connector and arrive to the slow-monitor unit based on the Raspberry Pi and dedicated measuring shields (not shown in the schematics). The data from the unit is sent to the experiment network via a copper Ethernet connection.
+
+\begin{figure}[htbp]
+\centering 
+\includegraphics[width=0.99\linewidth]{graphics/HV/PFD5-sch.png}
+\caption{\label{fig:pfd5sch} Electrical scheme of the PFD-5.}
+\end{figure}
+
+
+ %   \begin{itemize}
+  %      \item Figure: Electrical schematics of the HV system with ground path
+  %      \item Figure: Electrical schematics of PFD-5
+  %      \item Figure: CAD of the PFD-5
+  %      \item Subsystem interfaces (mechanical, electrical)
+ %       \item Component descriptions, counts per module/detector
+%        \item Component specifications
+%        \item Component production process
+ %       \item Prototyping results / spec validation (Photo of PFD-4)
+ %   \end{itemize}
+%\end{itemize}
+
+
+The following interfaces can be identified for the HV subsystem:
+    \begin{itemize}
+        \item Electrical interface between HV system and the field cage. This interface is realised at the PFD-5 flange as a plugged connection of a polymer coaxial HV cable, which enters the module via dedicated cryogenic vacuum-tight feed-through.
+        \item Electrical interface  for the Ethernet connection to the local experiment network.
+        \item Data interface for control of the HVPS and reading out slow monitoring data.
+        \item Electrical interface  for mains power distribution to the HVPS and slow control 5V power supply.
+        \item Mechanical interface for HV cable conduit mounting.
+        \item Mechanical interface for PFD-5 support near the cryostat.
+        \item Mechanical interface for HVPS (standard 19-inches electronic rack).
+    \end{itemize}
+
+The whole HV system of the detector naturally splits into 7 independent groups, each of them serving one 5-modules row.
+Therefore, 7 high voltage power supply units, 7 PFD-5 units and 7 coaxial HV cables with connectors are required for the complete system. The only non-commercial part of the system is the PFD-5. Its custom mechanical components such as the pot with the flange, the copper internal support structure, the oil level gauge will be manufactured at the workshop of the University of Bern.
+The pot will be leak-tested at 1.5 bar overpressure, ensuring its structural integrity. The electrical part of the filter will be mounted on the copper structure, lowered into the pot and tested at 1 kV. Then the filter will be filled with the oil to nominal level and tested at 60 kV and nominal current load for 10 days with monitoring of the voltage by its own slow-monitoring unit. The corresponding HV cable will be tested together with the filter. Successful test implies absence of voltage variation of more than 0.1\% and the oil temperature not exceeding 50 C.
+
+
+Several reduced scale prototypes of the ND-LAr component were constructed and tested so far. The largest one, called 2x2 Demonstrator comprises 4 modules of slightly smaller size (0.67x0.67x1.2m active volume), that in the final ND-LAr design. The HV system of these test TPCs gradually approximated the scheme proposed here for ND. This allowed to validate concept of ground distribution and mitigating external noise pickup. The 4-channel equivalent of PFD-5 was constructed, built and tested (PFD-4, see Figure \ref{fig:pfd5cad}, right). The filter was tested at 60 kV (+20\% to proposed maximum operation voltage)for 50 hours, 
+and used in tests of SingleCube, SingleModule and 2x2 Demonstrator. The PFD-4 has demonstrated that design parameters are reached to full extent and the general design scheme is therefore validated. The first unit of PFD-5 will be constructed in the beginning of the 2021 and provide final confirmation to this.
+
+ %    Subsystem details
+     
+     
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Interfaces}
 \label{sec:lartpc-interface}
+{\it Andrew L., 4 pages}
 
 Table~\ref{tbl:larndinterfaces} contains a summary and brief description of all the interfaces between the \dword{ndlar} consortium and other consortia, working groups, and task forces, with references to the current version of the interface documents describing those interfaces.  
 Drawings of the mechanical interfaces and diagrams of the electrical interfaces are 
@@ -96,6 +815,7 @@ and so on     &  (desc)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Risks and Mitigations}
 \label{sec:lartpc-risks}
+{\it Nadine, 2-3 pages}
 
 Table~\ref{tab:risks:ND-LAr} contains a list of all the
 risks that \dword{dune} is currently holding in the \dword{ndlar} risk register.  Each line includes the official \dword{dune} risk register identification number, a description of the risk, the proposed mitigation for the risk, and finally three columns rating the post-mitigation (P)robability that the risk described comes to pass, the degree of (C)ost risk for that line, and the degree of (S)chedule risk.  Risk levels are defined as (L)ow (<10\% probability of occurring, <5\% cost impact, <2 month schedule impact), (M)edium (10 to 25\% probability of occurring, 5\% to 20\% cost impact, 2 to 6 month schedule impact), or (H)igh (>25\% probability of occurring, >20\% cost impact, >6 month schedule impact).  Most of these risks are reduced to a ``Low'' level following mitigation (as shown in the table), although several of them currently hold a higher risk levels (pre-mitigation), due to the early stage of development of the \dword{ndlar} system relative to other systems.  
@@ -119,6 +839,7 @@ Row 3 & Third \\ % no \colhline on final row
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \section{Schedule}
 \label{sec:lartpc-org-sched}
+{\it Dan D., 2-3 pages}
 
 Table \ref{tab:ndlar-sched} lists key milestones in the design, validation, construction, and installation of the \dword{ndlar}.  These milestones include external milestones indicating linkages to the main \dword{dune} schedule (highlighted in color in the table), as well as internal milestones such as design validation and technical reviews.
 
@@ -142,55 +863,161 @@ Third batch (320 PD modules) arrive at US PD Reception Facility  & January 2024\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \section{Prototyping Plans}
 \label{sec:lartpc-proto}
+{\it Dan D., 4 pages}
 
+
+The prototyping plan for the Near Detector LArTPC detector will address a specific set of technical targets between now and the initiation of detector production.  
+Prototyping activities fall into two categories: component-level and integration-level prototyping.  
+Component prototyping is generally addressed via stand-alone small-scale tests, and the majority of these tests have been completed over the recent years of the ArgonCube R\&D program.
+Integration prototyping addresses how these components come together and function coherently within the ND LArTPC design, as well as demonstrating the large-scale production and assembly processes necessary to construct the Near Detector.
+
+There are three stages to the integration prototyping plan: the SingleCube Demonstrator, the ArgonCube 2x2 Demonstrator, and the subsequent Full-scale Demonstrator.
+The SingleCube Demonstrator is a fully-functional LArTPC of design similar to the ND module, but at a scale for hosting one prototype charge and light readout element. 
+capable of hosting large-scale charge readout and light readout elements within a fiberglass (PCB) field cage of similar structure to the Near Detector module design.
+Operation of a SingleCube TPC at Bern in Oct.~2020 has provided the first integrated test of the ND LArTPC design. 
+The 2x2 Demonstrator is a complete, but sub-scale, LArTPC detector system focused on verifying technical readiness of the ND LArTPC design before the completion of the Near Detector design phase.  
+The Full-scale Demonstrator is a production-scale LArTPC module that will provide an engineering validation of the full-scale component production, assembly, and testing processes before the Consortium proceeds to Near Detector production.
+
+\begin{dunefigure}[ND-LAr Prototypes]{fig:ndlar-prototypes}
+{(Left) The mechanical assembly of the first module (Module 0) of the ArgonCube 2x2 Demonstrator, including the cathode, field cage, and anode support panels.  The module is a sub-scale prototype of the Near Detector LArTPC module, at 60\% drift length and 40\% module height.  (Center) The Cryostat of the ArgonCube 2x2 Demonstrator (Right) The engineering model of the full-scale ND LArTPC module (1 m by 1 m footprint and 3.5 m height), shown with the anode panels detached from the field cage.  The pixelated anode tiles (gold rectangles) provide true 3D imaging, while the dielectric light traps (pink and while rectangles) provide high-efficiency scintillation light detection.}
+\includegraphics[width=0.8\textwidth]{dunelogo_colorhoriz}
+\end{dunefigure}
+
+\subsection{ArgonCube 2x2 Demonstrator}
+\label{sec:2x2Demo}
+
+This demonstrator will consist of four LArTPC modules arranged in a 2x2 grid within a shared high-purity LAr bath.  
+Each TPC module has a footprint of 0.7 m by 0.7 m, and is roughly 1.4 m tall.
+
+The first LArTPC module of this system, called Module 0, is in production through Autumn 2020 with a goal of operation by the end of 2020 at the Univ. of Bern.  
+Operation of this first module will achieve the technical targets of the 2x2 prototyping program necessary for completion of the detector preliminary design by mid-2021:
+\begin{enumerate}
+    \item Verification of the mechanical robustness (in liquid argon) of the modular LArTPC design, fabricated primarily of fiberglass laminate panels (G10).
+    \item Stable delivery of 25 kV baseline (50 kV goal) high voltage to the LArTPC cathode.
+    \item Demonstration of an electron lifetime of greater than 500 us within the LArTPC.
+    \item Demonstration of a pixel charge readout noise of less than 1000 e- ENC (uncorrelated).
+    \item Demonstration of a module scintillation detection efficiency for signals of > 5 MeV deposited energy.
+\end{enumerate}
+
+Although each of these technical targets has been independently demonstrated for each component in a stand-alone fashion, integration of these components into a single functional LArTPC must be shown by Module 0 operation.  
+With these technical achievements in hand, the data from Module 0 should also enable the following technical studies:
+\begin{enumerate}
+    \item 3D imaging and reconstruction of cosmic rays in the modular LArTPC design
+    \item Measurement of the drift field uniformity in the modular LArTPC design
+\end{enumerate}
+
+{\it COVID-19 Response:} Given the restrictions on travel due to the ongoing COVID-19 pandemic, US partners will only be able to remotely assist with the integration and operation of Module 0 at the Univ.~of~Bern.  
+To maintain prototyping progress and facilitate system performance measurements and debugging by US partners, we have manufactured and distributed a number of 0.3-m cubic SingleCube LArTPCs that correspond to a segment of a 2x2 TPC module capable of hosting a single pixelated anode tile and single light readout tile.  
+These prototype TPCs, with operation commencing in Autumn 2020, will provide the following technical target:
+\begin{enumerate}
+    \item Advanced demonstration of the integrated operation of the LArTPC charge and light readout systems in liquid argon.
+\end{enumerate}
+
+After evaluation of Module 0, we will proceed to production of the full set of four LArTPC modules to complete the ArgonCube 2x2 Demonstrator.  
+Data from operation of these four modules within the 2x2 Cryostat in the surface cosmic ray flux at the Univ.~of~Bern will enable the following technical studies:
+\begin{enumerate}
+    \item Evaluation of the relative performance of multiple LArTPC modules operating within a common high-purity LAr bath.
+    \item Evaluation of the impact of dead volumes using cosmic rays which span multiple LArTPC modules.
+\end{enumerate}
+
+After commissioning of the 2x2 at Bern, it will be shipped to Fermilab for installation and operation in the NuMI neutrino beam.  
+Data from operation of the 2x2 in this neutrino flux will enable the following technical studies:
+\begin{enumerate}
+    \item LArTPC module performance in response to beam neutrino interactions
+\end{enumerate}
+
+\subsection{Full-scale Demonstrator}
+
+The Full-scale Demonstrator is an engineering demonstrator for the Near Detector LArTPC module design.  
+Two phases of FSD operation are foreseen: an initial phase between the completion of the detector preliminary design (mid-2021) and the final design (mid-2022), and a second phase between the completion of the final design (mid-2022) and the start of Near Detector production (mid-2023).
+
+In the first phase we will construct and operate one full-scale LArTPC module according to the Near Detector design.  
+It will be operated in a 1.5-m-diameter and 4-m-tall cylindrical cryostat capable of hosting this one module, and is serviced by a O(10 ton) high-purity LAr cryogenics system.  
+The key technical targets of this prototype are:
+\begin{enumerate}
+    \item Demonstrate that the full-scale LArTPC design continues to meet the key technical specifications described in the preceding section on Module 0 technical targets (e.g. cryo-mechanical stability, HV, LAr purity, charge readout noise, and scintillation efficiency).
+    \item Establish and exercise the production and assembly processes for the ND LArTPC modules, including: component production and testing processes, design and production of assembly rigs and lifting fixtures, documented assembly procedures, hazard analyses and safety reviews, etc.
+    \item Identify potential QA/QC issues and use them to refine the QA/QC program in advance of component production.
+    \item If appropriate, revise the design to facilitate component production and LArTPC module assembly.
+    \item Establish the testing program to be used at the Module Integration Facility (i.e. the ND LArTPC assembly line).  This program will provide validation of the performance of each LArTPC module before these are delivered to the Near Site for installation and detector commissioning. 
+\end{enumerate}
+
+In the second phase, commencing at the conclusion of the final design phase (mid-2022), we will produce another full-scale LArTPC module according to the final design.  
+We will repeat the assembly and testing program described above, and this will serve as a final pre-production validation before we initiate Near Detector production in mid-2023.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \section{Construction Plans}
 \label{sec:lartpc-construc}
+{\it Mike M., 4 pages}
 
+\begin{itemize}
+    \item Intro 
+    \begin{itemize}
+        \item Purpose of MIF
+        \item Key elements of MIF
+        \item Major requirements that drive MIF design
+    \end{itemize}
+    \item MIF details
+    \begin{itemize}
+        \item IERC facility layout
+        \item Figure: CAD of subsystem elements       \item Assembly/testing process flow
+        \item Component descriptions \& CAD
+        \item Main interfaces (mechanical, electrical)
+        \item Component specifications
+        \item Component production process
+    \end{itemize}
+\end{itemize}
 
+\subsection{Introduction}
 
+\subsection{Module Integration Facility}
+
+\subsection{Assembly Plan}
+
+\subsection{Testing Plan}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \fixme{The following sections are not in the new structure; I'm keeping them at the end here for now, in case you want to include one or more of them later.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Not in Tim's new organization
-\section{Safety Concerns}
-\label{sec:lartpc-safety}
+%\section{Safety Concerns}
+%\label{sec:lartpc-safety}
+%{\it Nadine}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Not in Tim's new organization
-\section{Calibration}
-\label{sec:lartpc-calib}
+%\section{Quality Assurance}
+%\label{sec:lartpc-qa}
+%{\it Andrew L., or proxy}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Not in Tim's new organization
-\section{Quality Assurance}
-\label{sec:lartpc-qa}
+%\section{Transport and Handling}
+%\label{sec:lartpc-transport}
+%{\it Andrew L., or proxy}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Not in Tim's new organization
-\section{Transport and Handling}
-\label{sec:lartpc-transport}
+%\section{Near Site Installation and Commissioning}
+%\label{sec:lartpc-iic}
+%{\it Andrew L., or proxy}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Not in Tim's new organization
-\section{Installation, Integration, and Commissioning}
-\label{sec:lartpc-iic}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Not in Tim's new organization
-\section{Organization}
-\label{sec:lartpc-org}
+%\section{Organization}
+%\label{sec:lartpc-org}
+%{\it Michele/Dan D.}
 
 %%%%%%%%%%%%%%% Not in Tim's new organization
-\subsection{Participating Institutions}
-\label{sec:fdsp-org-inst}
+%\subsection{Participating Institutions}
+%\label{sec:fdsp-org-inst}
 
-The \dword{ndlar} consortium benefits from the contributions of many institutions and facilities in \fixme{several countries? or the U.S. and ??}.  Table~\ref{tab:ndlar-institutes}
-lists the member institutions. 
+%The \dword{ndlar} consortium benefits from the contributions of many institutions and facilities in \fixme{several countries? or the U.S. and ??}.  Table~\ref{tab:ndlar-institutes} lists the member institutions. 
 
-\begin{longtable}
-{ll}
-\caption{\dshort{ndlar} consortium institutions}\\ \colhline
-\rowcolor{dunetablecolor} Member Institute  &  Country       \\  \toprowrule
-univ 1 &  \\ \colhline
-univ 2 &  \\ \colhline
-univ 3 &  \\ 
-\label{tab:ndlar-institutes}
-\end{longtable}
+%\begin{longtable}
+%{ll}
+%\caption{\dshort{ndlar} consortium institutions}\\ %\colhline
+%\rowcolor{dunetablecolor} Member Institute  &  Country       \\  \toprowrule
+%univ 1 &  \\ \colhline
+%univ 2 &  \\ \colhline
+%univ 3 &  \\ 
+%\label{tab:ndlar-institutes}
+%\end{longtable}
 
 
 
