@@ -2,7 +2,7 @@
 \label{ch:prism}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Overview of PRISM}
+\section{Overview of \dshort{duneprism}}
 \label{sec:prism-ovvw}
 
 %%%%%%%%%%%%%%%
@@ -19,7 +19,7 @@
 \subsection{Design Parameters}
 \label{sec:prism-ovvw-param}
 
-The \dword{duneprism} is designed to meet the physics requirements of the \dword{dune} experiment. 
+\dword{duneprism} is designed to meet the physics requirements of the \dword{dune} experiment. 
 The important design parameters are given in Table~\ref{tab:table-prism-params}. 
 
 
@@ -43,6 +43,52 @@ Row 3 & Third \\ % no \colhline on final row
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{System Design}
 \label{sec:prism-des}
+
+% \begin{enumerate}
+%     \item Hilman Roller system
+%     \begin{enumerate}
+%         \item Commercially available hardware
+%         \item Provides precisely controlled movement
+%         \item Speed & accelerations controlled by software
+%         \begin{enumerate}
+%             \item Controlled locally
+%             \item Controlled remotely from the control room 
+%         \end{enumerate}
+%     \item Each unit carries 150 tonnes, 6 units are planned for each detector
+%     \item Performance specifications
+%     \item Hardware specifications
+%     \end{enumerate}
+%     \item IGUS Energy Chain
+%     \begin{enumerate}
+%         \item Commercially available hardware
+%         \item Provides a flexible connection to hold, carry, and supply liquids, power, and data lines to the moving detector
+%         \item One assembly is used for each detector
+%         \item Each unit is oversized (20\% min) to allow for potential future needs
+%         \item Performance specifications
+%         \item Hardware specifications
+%     \end{enumerate}
+%     \item Location measurement 
+%     \begin{enumerate}
+%         \item Counting the Hilman motor pulses defines location
+%         \item Use a laser distance measurement for location verification
+%         \item Performance specifications
+%         \item Hardware specifications
+%     \end{enumerate}
+%     \item Personnel safety
+%     \begin{enumerate}
+%         \item Use a safety laser light curtain on each moving detector
+%         \item Breaking a beam starts the stop motion sequence
+%         \item Performance specifications
+%         \item Hardware specifications
+%     \end{enumerate}
+%     \item System controls
+%     \begin{enumerate}
+%         \item Automated system control system per industrial standards
+%         \item Remote control room monitoring of all systems & detector motion controls
+%         \item Safety systems monitored in control room
+%     \end{enumerate}
+% \end{enumerate}
+
 
 %%%%%%%%%%%%%%%
 \subsection{Moving a Loaded Cryostat}
@@ -78,16 +124,16 @@ It is expected that further refinements of the interface documents will take pla
 {tbl:larndinterfaces}
 {\dshort{duneprism} interface links}
 Interfacing System & Description & Linked Reference \\ \toprowrule
-Cryostat      &  (desc)
+Attachment of rails to the cavern floor     &  (desc)
 & \citedocdb{?} \\ \colhline
 
-\dshort{duneprism} &  (desc)
+Energy chains, Connection to cavern walls &  (desc)
 & \citedocdb{?} \\ \colhline
 
-\dshort{tms}  &  (desc)
+Energy chains, Detector services to be run through the chains  &  (desc)
 & \citedocdb{?} \\ \colhline
 
-and so on     &  (desc)
+Connection from Hilman skates to detector platforms    &  (desc)
 & \citedocdb{?} \\
 \end{dunetable}
 
@@ -102,7 +148,13 @@ risks that \dword{dune} is currently holding in the \dword{duneprism} risk regis
 
 In the following sections, we present a narrative description of each of the risks and the proposed mitigation.
 
-\fixme{Anne needs to get risk table template put together}
+\fixme{Anne needs to get risk table template put together; below from google sheet}
+
+\begin{itemize}
+\item Late delivery of \dword{sand} may affect the run plan
+\item Excessive vibrations or accelerations may necessitate additional procedures prior to, and after, movement which can increase downtime and may limit movement frequency
+\end{itemize}
+
 %\input{generated/risks-longtable-ND-LAr.tex}
 
 \begin{dunetable}
@@ -142,7 +194,27 @@ Third batch (320 PD modules) arrive at US PD Reception Facility  & January 2024\
 \section{Prototyping Plans}
 \label{sec:prism-qc}
 
+\fixme{from google sheet (Anne)}
+\begin{itemize}
+\item Description of goals
 
+\begin{itemize}
+\item Develop control system for the Hilman skates
+\item \item Develop monitoring systems
+\item \item Determine liquid stability during movement
+\item \item Identify relative forces induced on solid submerged structures
+\item \item Measure vibration and acceleration levels to inform the development of movement preparation and recovery procedures
+\item \item Develop starting and stopping sequences, include gradual (normal) running, and emergency stop procedures
+\end{itemize}
+
+\item Test location
+\item Personnel
+\item Schedule
+\end{itemize}
+
+
+
+\begin{comment}. %%%%% comment here to end
 \fixme{The following sections are not in the new structure; I'm keeping them at the end here for now, in case you want to include one or more of them later.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Not in Tim's new organization
@@ -191,7 +263,7 @@ univ 3 &  \\
 \label{tab:prism-institutes}
 \end{longtable}
 
-
+\end{comment}
 
 
 
