@@ -117,7 +117,7 @@ Pileup discussion:
 \end{itemize}
 
 {\it Insert image of single LBNF beam spill in ND LArTPC from Brooke's study.}
-
+ 
 %%%%%%%%%%%%%%%
 \subsection{Design Parameters}
 \label{sec:lartpc-ovvw-param}
@@ -865,52 +865,69 @@ Third batch (320 PD modules) arrive at US PD Reception Facility  & January 2024\
 \label{sec:lartpc-proto}
 {\it Dan D., 4 pages}
 
-
 The prototyping plan for the Near Detector LArTPC detector will address a specific set of technical targets between now and the initiation of detector production.  
 Prototyping activities fall into two categories: component-level and integration-level prototyping.  
 Component prototyping is generally addressed via stand-alone small-scale tests, and the majority of these tests have been completed over the recent years of the ArgonCube R\&D program.
 Integration prototyping addresses how these components come together and function coherently within the ND LArTPC design, as well as demonstrating the large-scale production and assembly processes necessary to construct the Near Detector.
 
 There are three stages to the integration prototyping plan: the SingleCube Demonstrator, the ArgonCube 2x2 Demonstrator, and the subsequent Full-scale Demonstrator.
-The SingleCube Demonstrator is a fully-functional LArTPC of design similar to the ND module, but at a scale for hosting one prototype charge and light readout element. 
-capable of hosting large-scale charge readout and light readout elements within a fiberglass (PCB) field cage of similar structure to the Near Detector module design.
-Operation of a SingleCube TPC at Bern in Oct.~2020 has provided the first integrated test of the ND LArTPC design. 
-The 2x2 Demonstrator is a complete, but sub-scale, LArTPC detector system focused on verifying technical readiness of the ND LArTPC design before the completion of the Near Detector design phase.  
+The SingleCube Demonstrator is a $\sim$30-liter fully-functional LArTPC designed to validate the integrated performance of the Near Detector prototype charge and light readout elements in a field cage of similar mechanical design as the Near Detector.
+The ArgonCube 2x2 Demonstrator is a complete ton-scale LArTPC detector system focused on verifying technical readiness of the ND LArTPC module design before the completion of the Near Detector design phase.
 The Full-scale Demonstrator is a production-scale LArTPC module that will provide an engineering validation of the full-scale component production, assembly, and testing processes before the Consortium proceeds to Near Detector production.
+Fig.~\ref{fig:ndlar-prototypes} shows each of these prototypes.
 
 \begin{dunefigure}[ND-LAr Prototypes]{fig:ndlar-prototypes}
-{(Left) The mechanical assembly of the first module (Module 0) of the ArgonCube 2x2 Demonstrator, including the cathode, field cage, and anode support panels.  The module is a sub-scale prototype of the Near Detector LArTPC module, at 60\% drift length and 40\% module height.  (Center) The Cryostat of the ArgonCube 2x2 Demonstrator (Right) The engineering model of the full-scale ND LArTPC module (1 m by 1 m footprint and 3.5 m height), shown with the anode panels detached from the field cage.  The pixelated anode tiles (gold rectangles) provide true 3D imaging, while the dielectric light traps (pink and while rectangles) provide high-efficiency scintillation light detection.}
-\includegraphics[width=0.8\textwidth]{dunelogo_colorhoriz}
+{(Left) The SingleCube LArTPC designed to test a single integrated large-format charge and light readout element (Center) The mechanical assembly of the first module (Module 0) of the ArgonCube 2x2 Demonstrator, including the cathode, field cage, and anode support panels.  The module is a sub-scale prototype of the Near Detector LArTPC module, at 60\% drift length and 40\% module height.  (Right) The engineering model of the full-scale ND LArTPC module (1 m by 1 m footprint and 3.5 m height), shown with the anode panels detached from the field cage.  The pixelated anode tiles (gold rectangles) provide true 3D imaging, while the dielectric light traps (pink and while rectangles) provide high-efficiency scintillation light detection.}
+\includegraphics[width=0.3\textwidth]{graphics/Prototyping/SingleCubeTPC.png}
+\includegraphics[width=0.25\textwidth]{graphics/Prototyping/Module_0_FieldCage.png}
+\includegraphics[width=0.4\textwidth]{graphics/Prototyping/assemblysinglemod.PNG}
 \end{dunefigure}
+
+\subsection{SingleCube Demonstrators}
+\label{sec:singlecube-proto}
+
+The SingleCube Demonstrator is a response to COVID-19 travel restrictions that prevented international partners from traveling to our primary prototyping site at the Univ.~of~Bern\@.
+The TPC has a drift length and mechanical interfaces identical to the 2x2 module, but is sized to support only one pixel readout tile and one light readout element (see Fig.~\ref{fig:singlecube-prototype}). 
+This facilitates an integrated test of the active detector elements in a smaller liquid argon cryogenic system in advance of their installation in the larger ArgonCube 2x2 Demonstrator module.
+Instead of using a field cage based on high-resistivity polyamide film, it relies on a more conventional PCB-based field cage with discrete resistors, easily produced during the pandemic-induced curtailment of activities.
+Operation of a SingleCube TPC at Bern in Oct.~2020 has provided the first integrated test of the ND LArTPC readout system, successfully imaging cosmic rays and operating stably over the planned week-long run.
+This test achieved targets in system noise ($<$1000~e$^-$~ENC), LAr purity ($>$500~$\mu$s), as well as HV field strength (1~kV/cm) and stability (see Fig.~\ref{fig:singlecube-results}).
+Five copies of the SingleCube TPC were built at LBNL and distributed to partner institutions for further system testing and refinement.
+
+\begin{dunefigure}[SingleCube Prototype]{fig:singlecube-prototype}
+{(Left) Installation of a LArPix tile and ArCLight panel assembly into the SingleCube TPC at the Univ.~of~Bern.  (Right) An overlay of the raw data from 25 typical cosmic ray events collected during the first SingleCube operation in Oct.~2020\@.}
+\includegraphics[width=0.4\textwidth]{graphics/Prototyping/SingleCubeAssyAtBern.png}
+\includegraphics[width=0.4\textwidth]{graphics/Prototyping/singlecube_25evt_overlay.png}
+\end{dunefigure}
+
+\begin{dunefigure}[SingleCube Results]{fig:singlecube-results}
+{(Left) The electron lifetime measured using anode-cathode crossing cosmic ray muon tracks during the first operation of the SingleCube TPC (Right) The distribution of muon energy loss in LAr is consistent with that expected for cosmic ray muon tracks.}
+\includegraphics[width=0.4\textwidth]{graphics/Prototyping/singlecube_electron_lifetime.png}
+\includegraphics[width=0.43\textwidth]{graphics/Prototyping/singlecube_muon_eloss.png}
+\end{dunefigure}
+
 
 \subsection{ArgonCube 2x2 Demonstrator}
 \label{sec:2x2Demo}
 
-This demonstrator will consist of four LArTPC modules arranged in a 2x2 grid within a shared high-purity LAr bath.  
-Each TPC module has a footprint of 0.7 m by 0.7 m, and is roughly 1.4 m tall.
+This demonstrator will consist of four LArTPC modules arranged in a 2x2 grid within a shared high-purity LAr bath.
+Each TPC module has a footprint of 0.7 m by 0.7 m, and is roughly 1.4 m tall, as shown in the center panel of Fig.~\ref{fig:ndlar-prototypes}.
 
-The first LArTPC module of this system, called Module 0, is in production through Autumn 2020 with a goal of operation by the end of 2020 at the Univ. of Bern.  
+The first LArTPC module of this system, called Module 0, will be operated in early 2021 at the Univ.~of~Bern.  
 Operation of this first module will achieve the technical targets of the 2x2 prototyping program necessary for completion of the detector preliminary design by mid-2021:
 \begin{enumerate}
     \item Verification of the mechanical robustness (in liquid argon) of the modular LArTPC design, fabricated primarily of fiberglass laminate panels (G10).
-    \item Stable delivery of 25 kV baseline (50 kV goal) high voltage to the LArTPC cathode.
-    \item Demonstration of an electron lifetime of greater than 500 us within the LArTPC.
-    \item Demonstration of a pixel charge readout noise of less than 1000 e- ENC (uncorrelated).
-    \item Demonstration of a module scintillation detection efficiency for signals of > 5 MeV deposited energy.
+    \item Stable delivery of 25~kV baseline (50~kV goal) high voltage to the LArTPC cathode.
+    \item Demonstration of an electron lifetime of greater than 500~$\mu$s within the LArTPC.
+    \item Demonstration of a pixel charge readout noise of less than 1000~e$^-$~ENC (uncorrelated).
+    \item Demonstration of a module scintillation detection efficiency for signals of $>$50~MeV deposited energy.
 \end{enumerate}
 
-Although each of these technical targets has been independently demonstrated for each component in a stand-alone fashion, integration of these components into a single functional LArTPC must be shown by Module 0 operation.  
-With these technical achievements in hand, the data from Module 0 should also enable the following technical studies:
+While the SingleCube TPC test has achieved these performance targets, Module 0 will demonstrate them at a scale comparable to the Near Detector TPC module.  
+With this large-scale demonstration in hand, the data from Module 0 should also enable the following technical studies:
 \begin{enumerate}
     \item 3D imaging and reconstruction of cosmic rays in the modular LArTPC design
     \item Measurement of the drift field uniformity in the modular LArTPC design
-\end{enumerate}
-
-{\it COVID-19 Response:} Given the restrictions on travel due to the ongoing COVID-19 pandemic, US partners will only be able to remotely assist with the integration and operation of Module 0 at the Univ.~of~Bern.  
-To maintain prototyping progress and facilitate system performance measurements and debugging by US partners, we have manufactured and distributed a number of 0.3-m cubic SingleCube LArTPCs that correspond to a segment of a 2x2 TPC module capable of hosting a single pixelated anode tile and single light readout tile.  
-These prototype TPCs, with operation commencing in Autumn 2020, will provide the following technical target:
-\begin{enumerate}
-    \item Advanced demonstration of the integrated operation of the LArTPC charge and light readout systems in liquid argon.
 \end{enumerate}
 
 After evaluation of Module 0, we will proceed to production of the full set of four LArTPC modules to complete the ArgonCube 2x2 Demonstrator.  
@@ -919,6 +936,13 @@ Data from operation of these four modules within the 2x2 Cryostat in the surface
     \item Evaluation of the relative performance of multiple LArTPC modules operating within a common high-purity LAr bath.
     \item Evaluation of the impact of dead volumes using cosmic rays which span multiple LArTPC modules.
 \end{enumerate}
+
+\begin{dunefigure}[ArgonCube 2x2 Prototype]{fig:argoncube-prototype}
+{(Left) The cryostat for testing Module 0 (Center) The cryostat for the ArgonCube 2x2 Demonstrator (Right) The 2x2 cryostat and cryogenics system at the Univ.~of~Bern.}
+\includegraphics[width=0.2\textwidth]{graphics/Prototyping/Module0_Cryostat.png}
+\includegraphics[width=0.3\textwidth]{graphics/Prototyping/2x2Cryostat.png}
+\includegraphics[width=0.4\textwidth]{graphics/Prototyping/2x2System.png}
+\end{dunefigure}
 
 After commissioning of the 2x2 at Bern, it will be shipped to Fermilab for installation and operation in the NuMI neutrino beam.  
 Data from operation of the 2x2 in this neutrino flux will enable the following technical studies:
@@ -968,11 +992,21 @@ We will repeat the assembly and testing program described above, and this will s
     \end{itemize}
 \end{itemize}
 
+Construction activities for the ND-LAr TPC modules feature three key steps: assembly, full-module quality control testing in liquid argon, and packaging/shipping the modules for off-site storage prior to installation within the ND-LAr cryostat.  The facility at which these activities will be carried out is the Module Integration Facility (MIF), located in the Integrated Engineering Research Center (IERC).  The IERC will be constructed in 2021 and 2022, and the MIF will be commissioned in 2023.  The full set of 35 (+ 5 spare) TPC modules will be assembled/tested in 2024--2026
+
 \subsection{Introduction}
 
 \subsection{Module Integration Facility}
 
+\begin{dunefigure}[Module Integration Facility]{fig:MIF}
+{Front view of the Module Integration Facility (MIF) at the IERC (left); angled view of the IERC, with the MIF on the left side of the left building in the figure (right).  Both images are from an architect's conceptual drawing.}
+\includegraphics[width=0.49\textwidth]{graphics/Construction/MIF-1.png}
+\includegraphics[width=0.49\textwidth]{graphics/Construction/MIF-2.png}
+\end{dunefigure}
+
 \subsection{Assembly Plan}
+
+MM: this is not ready for prime time yet given that we have not yet discussed assembly procedures for the TPC modules in any detail.  We are discussing this in this week's (Nov. 11th) TPC integration meeting, and I will make rapid progress on filling out this section with more information in hand.
 
 \subsection{Testing Plan}
 

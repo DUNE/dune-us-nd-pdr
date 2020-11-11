@@ -71,9 +71,9 @@ For most analyses, the signal process is a $\nu_{\mu}$ charged-current interacti
 The analyses presented herein use 10M generated events generated on the \dword{arcube} volume. This results in approximately 4M events with energy deposits in the TMS, and 2M events that are fully contained in the TMS. \fixme{Propose to drop: The files can be found in \texttt{/pnfs/dune/persistent/ndmuonspect}.}
 
 \subsubsection{Geometry Implementation (GDML)}
-\fixme{Mat}
 A simple Geometry Description Markup Language (GDML) version of the \dword{tms} was created using DUNEggd, an interface to for designing DUNE geometries with the General Geometry Description (GGD) software system. This system was chosen to assure compatibility with existing Near Detector geometries of the ND Hall, \dword{arcube}, GAr, and SAND detectors. 
 
+\fixme{CW: Are these densities and element properties really correct? The gdml file specifies that the steel in the RMMS uses SteelRMMS with density 7.85g/cc, with 99\% iron, 0.45\% Si, 0.4\% C. There is a Steel entry that perfectly matches the numbers below, but it is not used by the RMMS in the gdml file!}
 The geometry consist of 200 layers of alternating steel (7.93 g/cc, 73\% iron, 18\% chromium, 9\% nickel, 0.1\% carbon) and scintillator (1.05 g/cc, 92\% C, 8\% H). The steel is implemented as 3 plates. The central plate is 3.5 m wide by 3.2 m tall. Plates placed to either side of the central plate measure 1.75 m by 3.2 m. A 2 cm gap separates the side plates from the central plate. The first 40 layers of steel are 1.5 cm thick. The rear 60 layers of steel are 4 cm thick. There is a 4 cm gap between each steel layer. 
 
 \fixme{Update these numbers, but we certainly don't have such lareg gaps}
@@ -109,7 +109,7 @@ Figures \ref{fig:geom_front}-\ref{fig:geom_3d} show the final geometry.
 % Show opposite bending of neutrino/anti-neutrino events
 % Show some different energies and processes
 % Show impossible to reconstruct without TMS
-This section presents raw event displays, showing the hits from the primary lepton and other particles separated. Both the ArgonCube, gap and \dword{TMS} volumes are shown, as are track start, end and death positions. Each event display is broken down in $x-z$ and $y-z$ views, where the $x-z$ view receives the bending from the magnetic field. We also show the incoming neutrino and outgoing lepton energy and ID, and here only show events that are contained in the TMS. The GENIE event metadata is also included in the title for easy identification of the underlying physics process.
+This section presents raw event displays, showing the hits from the primary lepton and other particles separated. Both the ArgonCube, gap and TMS volumes are shown, as are track start, end and death positions. Each event display is broken down in $x-z$ and $y-z$ views, where the $x-z$ view receives the bending from the magnetic field. We also show the incoming neutrino and outgoing lepton energy and ID, and here only show events that are contained in the TMS. The GENIE event metadata is also included in the title for easy identification of the underlying physics process.
 
 % CCQE event with muon E = 2.84 GeV
 \begin{dunefigure}[]{fig:evdisplay_QE}
@@ -188,11 +188,9 @@ In Figure \ref{fig:eff_ke_20deg} we additionally include the $\theta_{\nu,\mu}<2
 \subsubsection{Muon Momentum Resolution}
 \fixme{Clarence}
 
-Particle trajectories in the \dword{tms} differ substantially from a traditional magnetic spectrumeter. In the TMS, a track's sagitta is, apart from energy loss, independent of momentum: the bend of a track per unit length is inversely proportional to momentum, but its range is proportional. The momentum measurement from the magnetic field is driven not be the magnitude of the sagitta, but by where longitudinally, the sagitta occurs. Consequently, we determine the momentum of the muon via its range - more sensitive on the kinematic regime we operate in - rather than by its curvature.
+Particle trajectories in the \dword{tms} differ substantially from a traditional magnetic spectrometer. In the TMS, a track's sagitta is, apart from energy loss, independent of momentum: the bend of a track per unit length is inversely proportional to momentum, but its range is proportional. The momentum measurement from the magnetic field is driven not be the magnitude of the sagitta, but by where longitudinally, the sagitta occurs. Consequently, we determine the momentum of the muon via its range - more sensitive on the kinematic regime we operate in - rather than by its curvature.
 
 \subsubsection{Muon Sign Selection}
-
-
 
 To study the bending of tracks in the TMS we use the $x-z$ view to look for deviations from a straight line. The method draws a straight line between the LAr start and endpoint, alternatively the LAr endpoint and the TMS start point, and projects it to the $z$ of the last hit of the track. This provides an estimate of the last hit position if it traversed in a straight line. If the last hit is above the the expected, the candidate is expected to have positive charge, and vice verse for negative charge. The procedure is outlined in Figure \ref{fig:bend_method}. It is important to stress that the full reconstruction will \emph{not} use such a method, and will instead fit particle hypotheses. The choice of sign selection metric presented was chosen because it requires minimal reconstruction, so can be done early in the TMS design process to gauge performance.
 \begin{dunefigure}[]{fig:bend_method}

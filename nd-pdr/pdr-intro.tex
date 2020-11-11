@@ -93,6 +93,17 @@ To that end, the \dword{nd} must:
 
 We summarize several key challenges which drive the requirements for \dword{nd} to fulfill these roles.
 
+%%%%%%%%%%%%%%
+\subsection{Requirements} %% Anne added 11/10
+\label{intro:science:reqs}
+
+\include{generated/spec-longtable-nd-overarch}
+
+\include{generated/spec-longtable-nd-meas}
+
+\include{generated/spec-longtable-nd-cap}
+
+%%%%%%%%%%%%%%
 \subsection{Initial Neutrino Flux $\Phi_\alpha$:}
 Over the past few decades, significant progress has been made in predicting the neutrino flux resulting from high-energy proton-based neutrino beam lines such as \dword{lbnf}. Several key elements in the prediction include:
 \begin{itemize}
@@ -144,6 +155,7 @@ Something about $\Phi_{FD}/\Phi_{ND}$
   }
 \end{dunefigure}
 
+%%%%%%%%%%%%%%
 \subsection{Neutrino Interaction Modelling $\sigma_\beta$:}
 All the properties of an interacting neutrino must be inferred from its outgoing particles. As a result, the modelling of neutrino-nucleus ($\nu-A$) interactions, particularly on argon in the case of \dword{dune}, is a critical element of the analysis. Since the oscillation parameters are extracted from the energy spectrum of neutrino interactions in each flavor, the modelling must provide the interaction cross section, summarizing the likelihood that the neutrino of a given flavor and energy interacts at all, as well as the details of the outgoing lepton and hadron systems, which are essential ingredients in understanding metrics like efficiencies/purities of the selected events and the resolution of quantities like the neutrino energy. For the hadron system in particular, the details of the particle content (particle type and kinematics) fundamentally impact the ionization and optical signal of the events, and thus the detector response is sensitive to this modelling regardless of whether the event selection and kinematic reconstruction chooses to use the details of the information or not.
 Likewise, the modelling issues go beyond the determination of the $\nu-A$ cross section, but in include all aspects of modelling the $\nu-A$ interaction and the particles emerging from the target nucleus that impact the detector response. To that end, reference to ``$\sigma_\beta$'' and ``neutrino cross sections'' encompasses these issues, and not just ``cross sections'' narrowly defined. However, we exclude particle tracking and propagation effects in bulk media ({\em e.g.} LAr) which also  
