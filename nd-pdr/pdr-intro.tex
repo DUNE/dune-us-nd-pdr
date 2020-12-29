@@ -65,12 +65,12 @@ Background
 %  \centering
 {Spectrum of $\nu_\mu$, $\nu_e$}
   \subfloat[][$E_{\rm rec}$]{
-    \includegraphics[width=0.45\textwidth]{spec_app_nu_no.pdf}
+    \includegraphics[width=0.45\textwidth]{graphics/introduction/spec_app_nu_no.pdf}
 
     %\label{fig:fd_nue}
   }
   \subfloat[][$E_{\rm proton}^{dep}$]{
-    \includegraphics[width=0.45\linewidth]{spec_dis_nu_no.pdf}
+    \includegraphics[width=0.45\linewidth]{graphics/introduction/spec_dis_nu_no.pdf}
     %\label{fig:fd_numu}
   }
 \end{dunefigure}
@@ -128,12 +128,12 @@ Something about $\Phi_{FD}/\Phi_{ND}$
 %  \centering
 {Spectrum of $\nu_\mu$, $\nu_e$}
   \subfloat[][$E_{\rm rec}$]{
-    \includegraphics[width=0.45\textwidth]{hist_stop0_Erec_osc_noRW.png}
+    \includegraphics[width=0.45\textwidth]{graphics/introduction/hist_stop0_Erec_osc_noRW.png}
 
     %\label{fig:eproton_ndspec}
   }
   \subfloat[][$E_{res}$]{
-    \includegraphics[width=0.45\linewidth]{FHC_Enu_Erec_fracDiff1D_m20pcProtonE.png}
+    \includegraphics[width=0.45\linewidth]{graphics/introduction/FHC_Enu_Erec_fracDiff1D_m20pcProtonE.png}
     %\label{fig:eproton_enures}
   }
 \end{dunefigure}
@@ -146,11 +146,11 @@ Something about $\Phi_{FD}/\Phi_{ND}$
 %  \centering
 {Spectrum of $\nu_\mu$, $\nu_e$}
   \subfloat[][$Q^2$]{
-    \includegraphics[width=0.45\textwidth]{graphics/PiStudyDataMCRatioTrueFHC.pdf}
+    \includegraphics[width=0.45\textwidth]{graphics/introduction/PiStudyDataMCRatioTrueFHC.pdf}
     %\label{fig:eproton_ndspec}
   }
   \subfloat[][$\delta_{CP}$ ]{
-    \includegraphics[width=0.45\linewidth]{graphics/PiStudyBiasWithGAr.pdf}
+    \includegraphics[width=0.45\linewidth]{graphics/introduction/PiStudyBiasWithGAr.pdf}
     %\label{fig:eproton_enures}
   }
 \end{dunefigure}
@@ -160,17 +160,19 @@ Something about $\Phi_{FD}/\Phi_{ND}$
 All the properties of an interacting neutrino must be inferred from its outgoing particles. As a result, the modelling of neutrino-nucleus ($\nu-A$) interactions, particularly on argon in the case of \dword{dune}, is a critical element of the analysis. Since the oscillation parameters are extracted from the energy spectrum of neutrino interactions in each flavor, the modelling must provide the interaction cross section, summarizing the likelihood that the neutrino of a given flavor and energy interacts at all, as well as the details of the outgoing lepton and hadron systems, which are essential ingredients in understanding metrics like efficiencies/purities of the selected events and the resolution of quantities like the neutrino energy. For the hadron system in particular, the details of the particle content (particle type and kinematics) fundamentally impact the ionization and optical signal of the events, and thus the detector response is sensitive to this modelling regardless of whether the event selection and kinematic reconstruction chooses to use the details of the information or not.
 Likewise, the modelling issues go beyond the determination of the $\nu-A$ cross section, but in include all aspects of modelling the $\nu-A$ interaction and the particles emerging from the target nucleus that impact the detector response. To that end, reference to ``$\sigma_\beta$'' and ``neutrino cross sections'' encompasses these issues, and not just ``cross sections'' narrowly defined. However, we exclude particle tracking and propagation effects in bulk media ({\em e.g.} LAr) which also  
 
-It has been widely recognized that as accelerator-based neutrino oscillation experiments have increased in precision, commensurate improvements in neutrino-nucleus interactions are necessary to limit their impact on the systematic uncertainty budget. While the past decade has seen substantial progress both in measurements and theoretical/modelling, significant challenges remain both in defining a ``default'' model and adequately quantifing and propagating systematic uncertainties.
+It has been widely recognized that as accelerator-based neutrino oscillation experiments have increased in precision, commensurate improvements in neutrino-nucleus interactions are necessary to limit their impact on the systematic uncertainty budget. While the past decade has seen substantial progress both in measurements and theoretical/modelling, significant challenges remain both in defining a ``default'' model and adequately quantifying and propagating systematic uncertainties.
 
 Among the concerns and challenges include:
 \begin{itemize}
 \item A handful of well-developed neutrino event generators and other models for $\nu-A$ interactions are available to the community. However, the generators have significant differences in the predicted properties of the $\nu-A$ interactions, even when they employ similar underlying models.
 \item There have been a few ``surprises'' in the form of significant deviations from model predictions resulting from physics processes that were not accounted for. One example is the excess of pionless $\nu_\mu$ charged current 
-\item Theoretically, it is recognized that 
-
+\item Theoretically, it is recognized that models/event generators used in experiments have shortcomings with regard to the nuclear physics they are based. An example is the relativistic Fermi Gas (RFG) model used in most models to describe the initial state of the bound nucleons, which does not capture many essential aspects of the nuclear physics. Nonetheless, the replacement of these models has proven difficult from both a practical standpoint in providing a consistent accounting of the relevant physics and in improving the agreement with the data.
+\item Electron-nucleus ($e-A$) scattering is a closely analogous process to $\nu-A$ scattering that involves much of the same physics ({\em e.g.} the vector form factors from the conserved vector current ansatz), allowing predictions can be readily extracted from the same event generators/models used for $\nu-A$ scattering. However, there are significant discrepancies between the data and models, indicating that the correct physics is not captured for $\nu-A$ scattering.
 \end{itemize}
+%Together, both experimental and theoretical considerations indicate that 
 
-In each case
+
+
 %Summary of Role of near detector in LBL physics
 %Explain major a priori uncertainties in neutrino flux, neutrino interactions, detector response. Visit examples from NOvA %and T2K about how near detectors reduce uncertainties.
 %Discussion on coupling/convolution of uncertainties.
@@ -236,7 +238,7 @@ In each case
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The DUNE-US Project Organization and Responsibilities}
-\label{intro:collab-proj}
+\label{intro:project}
 
 
 
