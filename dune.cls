@@ -12,8 +12,8 @@
 
 \newif\iffinal
 %% Switch between draft or final:
-\finalfalse
-%\finaltrue
+%\finalfalse
+\finaltrue
 
 % Required values and their setters
 %\newcommand\thedoctitle{DRAFT Technical Design Report}
@@ -120,6 +120,9 @@
 
 % Tighter control of floats.
 \RequirePackage{placeins}
+
+\usepackage{draftwatermark} %had to put ahead of color
+\SetWatermarkText{DRAFT}
 
 
 \RequirePackage[table,usenames,pdftex,dvipsnames]{xcolor}
